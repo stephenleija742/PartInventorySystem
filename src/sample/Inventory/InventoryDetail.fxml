@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<GridPane prefHeight="651.0" prefWidth="300.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Inventory.InventoryDetail">
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <Label text="ID:" />
+        <TextField fx:id="idField" GridPane.columnIndex="1" />
+        <Label text="Part:" GridPane.rowIndex="1" />
+        <TextField fx:id="partField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="Location" GridPane.rowIndex="2" />
+        <ComboBox fx:id="locationField" editable="true" prefWidth="150.0" promptText="Location" value="Unknown" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Facility 1 WareHouse 1" />
+                    <String fx:value="Facility 1 WareHouse 2" />
+                    <String fx:value="Facility 2" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Label text="Quantity:" GridPane.rowIndex="3" />
+        <TextField fx:id="quantityField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    </children>
+</GridPane>

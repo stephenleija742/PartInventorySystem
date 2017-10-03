@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="690.0" prefWidth="879.0"
+            BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Parts.PartsTableCon">
+    <content>
+       <TableView fx:id="partsTable" prefHeight="690.0" prefWidth="879.0">
+           <columns>
+               <TableColumn fx:id="idCol" prefWidth="25.0" text="ID" />
+               <TableColumn fx:id="partNumCol" prefWidth="135.0" text="Part Number" />
+               <TableColumn fx:id="partNameCol" prefWidth="135.0" text="Part Name" />
+               <TableColumn fx:id="vendorCol" prefWidth="100.0" text="Vendor" />
+               <TableColumn fx:id="uoqCol" prefWidth="125.0" text="Unit of Quantity" />
+               <TableColumn fx:id="exPartNumCol" prefWidth="175.0" text="External Part Number" />
+           </columns>
+       </TableView>
+    </content>
+</ScrollPane>

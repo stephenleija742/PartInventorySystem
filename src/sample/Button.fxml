@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root type="javafx.scene.layout.HBox" alignment="CENTER" prefHeight="100.0" prefWidth="1191.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button contentDisplay="CENTER" mnemonicParsing="false" text="Add Part" fx:id="addButton">
+         <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </HBox.margin>
+      </Button>
+      <Button alignment="CENTER" mnemonicParsing="false" text="Edit Part" fx:id="editButton">
+         <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </HBox.margin>
+      </Button>
+      <Button alignment="CENTER" mnemonicParsing="false" text="Delete Part" fx:id="deleteButton">
+         <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </HBox.margin>
+      </Button>
+   </children>
+</fx:root>
