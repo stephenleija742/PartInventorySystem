@@ -17,8 +17,8 @@ import java.util.TreeMap;
 class PartsList {
 
     private ObservableList<PartModel> partModelList;
-    private TreeMap<Integer, PartModel> partModelMap;
-    private ObservableMap<Integer, PartModel> observableMap;
+    private TreeMap<String, PartModel> partModelMap;
+    private ObservableMap<String, PartModel> observableMap;
     private CabinetronGateway pdg;
 
     PartsList(){
@@ -26,7 +26,8 @@ class PartsList {
         observableMap = FXCollections.observableMap(partModelMap);
         partModelList = FXCollections.observableArrayList(observableMap.values());
         pdg = new PartsTableGateway();
-        observableMap.addListener((Change<? extends Integer, ? extends PartModel> c) ->{
+        //change to partnum?
+        observableMap.addListener((Change<? extends String, ? extends PartModel> c) ->{
             if(c.wasAdded()){
                 partModelList.add(c.getValueAdded());
             } else if (c.wasRemoved()){
@@ -46,8 +47,7 @@ class PartsList {
             partModel.setVendor(rowSet.getString("Vendor"));
             partModel.setUnitOfQuantity(rowSet.getString("UnitOfQuantity"));
             partModel.setExPartNum(rowSet.getString("ExternalPartNum"));
-            observableMap.put(partModel.getID(), partModel);
-            //partModelList.add(partModel);
+            observableMap.put(partModel.getPartNum(), partModel);
         }
         rowSet.close();
         return partModelList;
@@ -55,11 +55,9 @@ class PartsList {
 
 
     void addToPartList(String[] partDetails) throws IllegalArgumentException, SQLException{
-        /*for(PartModel p : partModelList){
-            if(p.getPartNum().equals(partDetails[0])){
-                throw new IllegalArgumentException("Part Number already exists");
-            }
-        }*/
+        if(observableMap.containsKey(partDetails[0])){
+            throw new IllegalArgumentException("Part Number already exists");
+        }
         int id;
         PartModel partModel = new PartModel();
         partModel.setPartNum(partDetails[0]); //partnum
@@ -69,8 +67,7 @@ class PartsList {
         partModel.setExPartNum(partDetails[4]); //expartnum
         id = pdg.insertRecord(partDetails);
         partModel.setId(id);
-        observableMap.put(partModel.getID(), partModel);
-        //partModelList.add(partModel);
+        observableMap.put(partModel.getPartNum(), partModel);
     }
 
     /*void editPartList(String[] selectedPart) throws IllegalArgumentException, SQLException{

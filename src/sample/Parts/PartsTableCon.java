@@ -54,7 +54,6 @@ public class PartsTableCon implements Initializable{
             Logger logger = Logger.getLogger(PartModel.class.getName());
             logger.log(Level.WARNING, iae.toString(), iae.getMessage());
         }
-
     }
 /*
     //handle add buttons request

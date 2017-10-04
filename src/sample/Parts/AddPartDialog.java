@@ -92,9 +92,7 @@ public class AddPartDialog implements Initializable{
                     //partsList.editPartList(partDetails);
                 }
                 saveButton.getScene().getWindow().hide();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch(IllegalArgumentException | NullPointerException e){
+            }  catch(IllegalArgumentException | NullPointerException | SQLException e){
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Invalid Part");
                 alert.setHeaderText("Part Constraint");
