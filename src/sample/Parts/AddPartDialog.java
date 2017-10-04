@@ -80,7 +80,6 @@ public class AddPartDialog implements Initializable{
     void initDataAndListeners(PartsList partsListReference){
         partsList = partsListReference;
         saveButton.setOnAction(event -> {
-            //String[] partDetails = {getPartNumber(), getPartName(),getVendor(), getUnitOfQuantity(), getExPartNum()};
             try {
                 if (headerLabel.getText().equals("Add Part")) {
                     String[] partDetails = {getPartNumber(), getPartName(),getVendor(),
@@ -89,7 +88,7 @@ public class AddPartDialog implements Initializable{
                 } else {
                     String[] partDetails = {getID(), getPartNumber(), getPartName(),getVendor(),
                             getUnitOfQuantity(), getExPartNum()};
-                    //partsList.editPartList(partDetails);
+                    partsList.editPartList(partDetails);
                 }
                 saveButton.getScene().getWindow().hide();
             }  catch(IllegalArgumentException | NullPointerException | SQLException e){

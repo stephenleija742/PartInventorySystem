@@ -13,6 +13,7 @@ public interface CabinetronGateway {
     CachedRowSet findAllRecords() throws SQLException;
     int insertRecord(String[] recordDetail) throws SQLException;
     void updateRecord(String[] recordDetail, int indexToUpdate) throws SQLException;
+    void updateRecord(String[] recordDetail) throws SQLException;
     void deleteRecord(int idToDelete) throws SQLException;
     PreparedStatement createPreparedStatement(Connection conn, String[] recordDetails) throws SQLException;
 }

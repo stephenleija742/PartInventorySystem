@@ -74,6 +74,11 @@ class InventoryTableGateway implements CabinetronGateway{
     }
 
     @Override
+    public void updateRecord(String[] recordDetail) throws SQLException {
+
+    }
+
+    @Override
     public void deleteRecord(int idToDelete) throws SQLException {
         try (Connection conn = ds.getConnection();
             PreparedStatement preparedStatement = conn.prepareStatement(inventoryDeleteStr)){

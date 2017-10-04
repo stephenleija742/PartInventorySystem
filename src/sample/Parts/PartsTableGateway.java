@@ -66,15 +66,20 @@ class PartsTableGateway implements CabinetronGateway{
     }
 
     @Override
-    public void updateRecord(String[] partDetails, int id) throws SQLException {
+    public void updateRecord(String[] recordDetail, int indexToUpdate) throws SQLException {
+
+    }
+
+    @Override
+    public void updateRecord(String[] partDetails) throws SQLException {
         try (Connection conn = ds.getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(tableEditStr)) {
-            preparedStatement.setString(1, partDetails[0]);
-            preparedStatement.setString(2, partDetails[1]);
-            preparedStatement.setString(3, partDetails[2]);
-            preparedStatement.setString(4, partDetails[3]);
-            preparedStatement.setString(5, partDetails[4]);
-            preparedStatement.setInt(6, id);
+            preparedStatement.setString(1, partDetails[1]);
+            preparedStatement.setString(2, partDetails[2]);
+            preparedStatement.setString(3, partDetails[3]);
+            preparedStatement.setString(4, partDetails[4]);
+            preparedStatement.setString(5, partDetails[5]);
+            preparedStatement.setInt(6, Integer.parseInt(partDetails[0]));
             preparedStatement.executeUpdate();
         }
     }

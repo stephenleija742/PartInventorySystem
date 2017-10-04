@@ -110,10 +110,11 @@ public class PartsFirstRunController implements Initializable{
             }
 
         });
-        /*
+
         deleteButton.setOnAction(event ->{
-            partsTableConController.deleteFromList(partDetailFields.getId());
-        });*/
+            System.out.println(partNum);
+            partsTableConController.deletePartInMemory(partNum);
+        });
 
         rowSelectionProperty.addListener((observable, oldValue, newValue) -> {
             PartModel selectedPart = observable.getValue();

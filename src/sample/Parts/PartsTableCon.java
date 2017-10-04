@@ -55,6 +55,16 @@ public class PartsTableCon implements Initializable{
             logger.log(Level.WARNING, iae.toString(), iae.getMessage());
         }
     }
+
+    void deletePartInMemory(String partNum){
+        try {
+            System.out.println("in deletepartinmemory: " + partNum);
+            partsList.deleteFromList(partsTable.getSelectionModel().getSelectedIndex(), partNum);
+        } catch (SQLException e){
+            System.err.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
 /*
     //handle add buttons request
     void addToList(String[] partDetails){

@@ -70,34 +70,48 @@ class PartsList {
         observableMap.put(partModel.getPartNum(), partModel);
     }
 
-    /*void editPartList(String[] selectedPart) throws IllegalArgumentException, SQLException{
+    void editPartList(String[] selectedPart) throws IllegalArgumentException, SQLException{
+        /*
         for(int i = 0; i < partModelList.size(); i++){
             if(partModelList.get(i).getPartNum().equals(selectedPart[0]) && i != indexOfPart){
                 throw new IllegalArgumentException("Part Number already exists");
             }
+        }*/
+        int checkID = observableMap.get(selectedPart[1]).getID();
+        if(observableMap.containsKey(selectedPart[1]) && checkID != Integer.parseInt(selectedPart[0])){ // partnum
+            throw new IllegalArgumentException("PartNumber already exists");
         }
-        partModelList.get(indexOfPart).setPartNum(selectedPart[0]);
+        observableMap.get(selectedPart[1]).setPartNum(selectedPart[1]);
+        observableMap.get(selectedPart[1]).setPartName(selectedPart[2]);
+        observableMap.get(selectedPart[1]).setVendor(selectedPart[3]);
+        observableMap.get(selectedPart[1]).setUnitOfQuantity(selectedPart[4]);
+        observableMap.get(selectedPart[1]).setExPartNum(selectedPart[5]);
+        pdg.updateRecord(selectedPart);
+        /*partModelList.get(indexOfPart).setPartNum(selectedPart[0]);
         partModelList.get(indexOfPart).setPartName(selectedPart[1]);
         partModelList.get(indexOfPart).setVendor(selectedPart[2]);
         partModelList.get(indexOfPart).setUnitOfQuantity(selectedPart[3]);
         partModelList.get(indexOfPart).setExPartNum(selectedPart[4]);
-        pdg.updateRecord(selectedPart, partModelList.get(indexOfPart).getID());
-    }*/
+        pdg.updateRecord(selectedPart, partModelList.get(indexOfPart).getID());*/
+    }
 
-    void deleteFromList(int deletionIndex, int id) throws NoSuchElementException, SQLException{
+    void deleteFromList(int deletionIndex, String partNum) throws NoSuchElementException, SQLException{
         if(deletionIndex == -1){
             throw new NoSuchElementException("No element selected for deletion");
         }
         if(partModelList == null || partModelList.isEmpty()){
             throw new NoSuchElementException("List is empty");
         }
+        int id = 0;
         if(partModelList.get(deletionIndex) != null) {
-            for(PartModel p : partModelList){
+            id = observableMap.get(partNum).getID();
+            observableMap.remove(partNum);
+            /*for(PartModel p : partModelList){
                 if(p.getID() == id){
                     partModelList.remove(p);
                     break;
                 }
-            }
+            }*/
             pdg.deleteRecord(id);
         } else{
             throw new NoSuchElementException("Element does not exist");
