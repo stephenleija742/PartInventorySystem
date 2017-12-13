@@ -5,6 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import sample.CabinetronGateway;
 import javafx.collections.MapChangeListener.Change;
+import sample.ItemModelPackage.ItemModel;
+import sample.ItemModelPackage.PartModel;
+import sample.TableListModel;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.SQLException;
@@ -14,20 +17,19 @@ import java.util.TreeMap;
 /**
  * Created by Stephen on 8/6/2017.
  */
-class PartsList {
+class PartsList implements TableListModel{
 
-    private ObservableList<PartModel> partModelList;
-    private TreeMap<String, PartModel> partModelMap;
-    private ObservableMap<String, PartModel> observableMap;
+    private ObservableList<ItemModel> partModelList;
+    private ObservableMap<String, ItemModel> observableMap;
     private CabinetronGateway pdg;
 
     PartsList(){
-        partModelMap = new TreeMap<>();
+        TreeMap<String, ItemModel> partModelMap = new TreeMap<>();
         observableMap = FXCollections.observableMap(partModelMap);
         partModelList = FXCollections.observableArrayList(observableMap.values());
-        pdg = new PartsTableGateway();
+        pdg = PartsTableGateway.getInstance();
         //change to partnum?
-        observableMap.addListener((Change<? extends String, ? extends PartModel> c) ->{
+        observableMap.addListener((Change<? extends String, ? extends ItemModel> c) ->{
             if(c.wasAdded()){
                 partModelList.add(c.getValueAdded());
             } else if (c.wasRemoved()){
@@ -37,15 +39,16 @@ class PartsList {
     }
 
     // might be able to make this an anon inner class and put into partmodellist and construction
-    ObservableList<PartModel> getPartModelList() throws SQLException{
+    @Override
+    public ObservableList<ItemModel> getModelList() throws SQLException{
         CachedRowSet rowSet = pdg.findAllRecords();
         while(rowSet.next()){
-            PartModel partModel = new PartModel();
-            partModel.setId(rowSet.getInt("Part_ID"));
+            ItemModel partModel = new PartModel();
+            partModel.setID(rowSet.getInt("Part_ID"));
             partModel.setPartNum(rowSet.getString("PartNum"));
             partModel.setPartName(rowSet.getString("PartName"));
             partModel.setVendor(rowSet.getString("Vendor"));
-            partModel.setUnitOfQuantity(rowSet.getString("UnitOfQuantity"));
+            partModel.setDropDownSelection(rowSet.getString("UnitOfQuantity"));
             partModel.setExPartNum(rowSet.getString("ExternalPartNum"));
             observableMap.put(partModel.getPartNum(), partModel);
         }
@@ -53,8 +56,8 @@ class PartsList {
         return partModelList;
     }
 
-
-    void addToPartList(String[] partDetails) throws IllegalArgumentException, SQLException{
+    @Override
+    public void addItemModelToList(String[] partDetails) throws IllegalArgumentException, SQLException{
         if(observableMap.containsKey(partDetails[0])){
             throw new IllegalArgumentException("Part Number already exists");
         }
@@ -63,20 +66,16 @@ class PartsList {
         partModel.setPartNum(partDetails[0]); //partnum
         partModel.setPartName(partDetails[1]); //partname
         partModel.setVendor(partDetails[2]); //vendor
-        partModel.setUnitOfQuantity(partDetails[3]); //unitofQuantity
+        partModel.setDropDownSelection(partDetails[3]); //unitofQuantity
         partModel.setExPartNum(partDetails[4]); //expartnum
         id = pdg.insertRecord(partDetails);
-        partModel.setId(id);
+        partModel.setID(id);
         observableMap.put(partModel.getPartNum(), partModel);
     }
 
-    void editPartList(String[] selectedPart) throws IllegalArgumentException, SQLException{
-        /*
-        for(int i = 0; i < partModelList.size(); i++){
-            if(partModelList.get(i).getPartNum().equals(selectedPart[0]) && i != indexOfPart){
-                throw new IllegalArgumentException("Part Number already exists");
-            }
-        }*/
+    @Override
+    public void editItemInList(String[] selectedPart) throws IllegalArgumentException, SQLException{
+        // remove either the get or contains key
         int checkID = observableMap.get(selectedPart[1]).getID();
         if(observableMap.containsKey(selectedPart[1]) && checkID != Integer.parseInt(selectedPart[0])){ // partnum
             throw new IllegalArgumentException("PartNumber already exists");
@@ -84,34 +83,25 @@ class PartsList {
         observableMap.get(selectedPart[1]).setPartNum(selectedPart[1]);
         observableMap.get(selectedPart[1]).setPartName(selectedPart[2]);
         observableMap.get(selectedPart[1]).setVendor(selectedPart[3]);
-        observableMap.get(selectedPart[1]).setUnitOfQuantity(selectedPart[4]);
+        observableMap.get(selectedPart[1]).setDropDownSelection(selectedPart[4]);
         observableMap.get(selectedPart[1]).setExPartNum(selectedPart[5]);
         pdg.updateRecord(selectedPart);
-        /*partModelList.get(indexOfPart).setPartNum(selectedPart[0]);
-        partModelList.get(indexOfPart).setPartName(selectedPart[1]);
-        partModelList.get(indexOfPart).setVendor(selectedPart[2]);
-        partModelList.get(indexOfPart).setUnitOfQuantity(selectedPart[3]);
-        partModelList.get(indexOfPart).setExPartNum(selectedPart[4]);
-        pdg.updateRecord(selectedPart, partModelList.get(indexOfPart).getID());*/
     }
 
-    void deleteFromList(int deletionIndex, String partNum) throws NoSuchElementException, SQLException{
+    @Override
+    public void deleteItemFromList(String[] itemDetails) throws NoSuchElementException, SQLException{
+        int deletionIndex = Integer.parseInt(itemDetails[0]);
+        String partNum = itemDetails[1];
         if(deletionIndex == -1){
             throw new NoSuchElementException("No element selected for deletion");
         }
         if(partModelList == null || partModelList.isEmpty()){
             throw new NoSuchElementException("List is empty");
         }
-        int id = 0;
+        int id;
         if(partModelList.get(deletionIndex) != null) {
             id = observableMap.get(partNum).getID();
             observableMap.remove(partNum);
-            /*for(PartModel p : partModelList){
-                if(p.getID() == id){
-                    partModelList.remove(p);
-                    break;
-                }
-            }*/
             pdg.deleteRecord(id);
         } else{
             throw new NoSuchElementException("Element does not exist");

@@ -1,5 +1,6 @@
 package sample.Parts;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import com.sun.rowset.CachedRowSetImpl;
 import sample.CabinetronGateway;
@@ -8,6 +9,8 @@ import javax.sql.rowset.CachedRowSet;
 import java.sql.*;
 
 class PartsTableGateway implements CabinetronGateway{
+    private ComboPooledDataSource ds;
+    private static PartsTableGateway uniqueInstance;
     private static final String allParts = "SELECT * FROM part";
     private static final String tableInsertStr =
             "INSERT INTO part (PartNum,PartName,Vendor,UnitofQuantity,ExternalPartNum) VALUES (?,?,?,?,?)";
@@ -17,11 +20,18 @@ class PartsTableGateway implements CabinetronGateway{
     private static final String delPartStr = "DELETE FROM part WHERE Part_ID=?";
     private static final String findDupPartNum = "SELECT PartNum FROM part" +
                                                  "WHERE Part_ID != ? and PartNum = ?";
-    private final MysqlDataSource ds;
+    //private final MysqlDataSource ds;
 
-    PartsTableGateway() {
-        ds = new MysqlDataSource();
-        ds.setURL("jdbc:mysql://localhost:8081/mydatabase");
+    static PartsTableGateway getInstance(){
+        if(uniqueInstance == null){
+            uniqueInstance = new PartsTableGateway();
+        }
+        return uniqueInstance;
+    }
+
+    private PartsTableGateway() {
+        ds = new ComboPooledDataSource();
+        ds.setJdbcUrl("jdbc:mysql://localhost:8081/mydatabase");
         ds.setUser("root");
         ds.setPassword("root");
     }

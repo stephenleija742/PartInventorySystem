@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import org.jetbrains.annotations.Contract;
+import sample.Inventory.ItemDialogInterface;
+import sample.TableListModel;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -13,7 +15,7 @@ import java.util.ResourceBundle;
 /**
  * Created by Stephen on 9/11/2017.
  */
-public class AddPartDialog implements Initializable{
+public class AddPartDialog implements Initializable, ItemDialogInterface{
     @FXML private TextField partNumberField;
     @FXML private TextField partNameField;
     @FXML private TextField vendorField;
@@ -22,9 +24,9 @@ public class AddPartDialog implements Initializable{
     @FXML private Button saveButton;
     @FXML private Button cancelButton;
     @FXML private Label headerLabel;
-    private PartsList partsList;
+    private TableListModel partsList;
 
-    public int rowIndex;
+    //public int rowIndex;
     public int id;
 
 
@@ -57,7 +59,7 @@ public class AddPartDialog implements Initializable{
 
     private String getID(){return Integer.toString(id);}
 
-    public void setHeaderLabel(String headerLabelReference){
+    void setHeaderLabel(String headerLabelReference){
         headerLabel.setText(headerLabelReference);
     }
 
@@ -75,20 +77,18 @@ public class AddPartDialog implements Initializable{
 
     void setExPartNumField(String exPartNumFieldRef){exPartNumField.setText(exPartNumFieldRef);}
 
-    void setRowIndex(int indexOfPart){rowIndex = indexOfPart;}
-
-    void initDataAndListeners(PartsList partsListReference){
+    public void initDataAndListeners(TableListModel partsListReference){
         partsList = partsListReference;
         saveButton.setOnAction(event -> {
             try {
                 if (headerLabel.getText().equals("Add Part")) {
                     String[] partDetails = {getPartNumber(), getPartName(),getVendor(),
                             getUnitOfQuantity(), getExPartNum()};
-                    partsList.addToPartList(partDetails);
+                    partsList.addItemModelToList(partDetails);
                 } else {
                     String[] partDetails = {getID(), getPartNumber(), getPartName(),getVendor(),
                             getUnitOfQuantity(), getExPartNum()};
-                    partsList.editPartList(partDetails);
+                    partsList.editItemInList(partDetails);
                 }
                 saveButton.getScene().getWindow().hide();
             }  catch(IllegalArgumentException | NullPointerException | SQLException e){
@@ -99,8 +99,7 @@ public class AddPartDialog implements Initializable{
                 alert.show();
             }
         });
-        cancelButton.setOnAction(event -> {
-            cancelButton.getScene().getWindow().hide();
-        });
+
+        cancelButton.setOnAction(event -> cancelButton.getScene().getWindow().hide());
     }
 }

@@ -20,6 +20,9 @@
                 <fx:include fx:id="inventory" source="Inventory/Inventory.fxml" />
             </content>
           </Tab>
+            <Tab closable="false" text="Product Templates">
+                <fx:include source="Views/ProductTemplateListView.fxml" fx:id="productTemplateList"/>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

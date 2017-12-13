@@ -1,53 +1,51 @@
-package sample.Parts;
+package sample.ItemModelPackage;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import sample.ItemModelPackage.ItemModel;
+import sample.Models.IdentfierInterface;
 
 
 /**
  * Created by Stephen on 7/5/2017.
  */
-public class PartModel {
+ public class PartModel implements ItemModel, IdentfierInterface{
+
     private SimpleIntegerProperty id;
     private SimpleStringProperty partNum;
+    private SimpleStringProperty dropDownSelection;
     private SimpleStringProperty partName;
     private SimpleStringProperty vendor;
     private SimpleStringProperty exPartNum;
-    private SimpleStringProperty unitOfQuantity;
 
-    PartModel(){
+    public PartModel(){
         this.id = new SimpleIntegerProperty();
         this.partNum = new SimpleStringProperty();
         this.partName = new SimpleStringProperty();
         this.vendor = new SimpleStringProperty();
         this.exPartNum = new SimpleStringProperty();
-        this.unitOfQuantity = new SimpleStringProperty();
+        this.dropDownSelection = new SimpleStringProperty();
     }
     //used by observer in table view to populate rows
-    @SuppressWarnings("unused")
-    public SimpleIntegerProperty idProperty(){return id;
-    }
 
-    @SuppressWarnings("unused")
+    @Override
+    public SimpleIntegerProperty idProperty(){return id;}
+    @Override
     public SimpleStringProperty partNumProperty(){return partNum;}
-
+    public SimpleStringProperty dropDownSelectionProperty(){return this.dropDownSelection;}
     @SuppressWarnings("unused")
     public SimpleStringProperty partNameProperty(){return partName;}
-
     @SuppressWarnings("unused")
     public SimpleStringProperty vendorProperty(){return vendor;}
-
     @SuppressWarnings("unused")
     public SimpleStringProperty exPartNumProperty(){return exPartNum;}
 
-    @SuppressWarnings("unused")
-    public SimpleStringProperty unitOfQuantityProperty(){return unitOfQuantity;}
-
-    final void setId(int idValue) throws IllegalArgumentException{
+    @Override
+    final public void setID(int idValue) throws IllegalArgumentException{
         this.id.set(idValue);
     }
-
-    final void setPartNum(String partNum) throws IllegalArgumentException{
+    @Override
+    public final void setPartNum(String partNum) throws IllegalArgumentException{
         if(partNum.length() <= 20 && partNum.length() > 0) {
             this.partNum.set(partNum);
         } else {
@@ -56,7 +54,8 @@ public class PartModel {
         }
     }
 
-    final void setPartName(String partName) throws IllegalArgumentException{
+
+    public final void setPartName(String partName) throws IllegalArgumentException{
         if(partName.length() <= 255 && partName.length() > 0) {
             this.partName.set(partName);
         } else{
@@ -65,7 +64,24 @@ public class PartModel {
         }
     }
 
-    final void setVendor(String vendor) throws IllegalArgumentException {
+    public final void setDropDownSelection(String selectionValue) throws IllegalArgumentException{
+        if(selectionValue == null) {
+            throw new NullPointerException("Please choose an option from dropdown");
+        }
+        if(selectionValue.equalsIgnoreCase("Unknown")){
+            throw new IllegalArgumentException("Selection cannot be unknown");
+        } else{
+            this.dropDownSelection.set(selectionValue);
+        }
+    }
+
+    @Override
+    public void setQuantity(String quantityValue) throws IllegalArgumentException {}
+
+    @Override
+    public void setQuantity(int quantityValue) throws IllegalArgumentException {}
+
+    public final void setVendor(String vendor) throws IllegalArgumentException {
         if(vendor.equals("")){
             this.vendor.set(vendor);
             return;
@@ -77,7 +93,7 @@ public class PartModel {
         }
     }
 
-    final void setExPartNum(String exPartNum) throws IllegalArgumentException{
+    public final void setExPartNum(String exPartNum) throws IllegalArgumentException{
         if(exPartNum.equals("")){
             this.exPartNum.set(exPartNum);
             return;
@@ -88,39 +104,26 @@ public class PartModel {
             throw new IllegalArgumentException("Invalid External Part Number");
         }
     }
+    @Override
+    public int getID(){return this.id.get();}
 
-    final void setUnitOfQuantity(String unitOfQuantityValue) throws IllegalArgumentException, NullPointerException {
-       if(unitOfQuantityValue == null) {
-           throw new NullPointerException("Unit Of Quantity must be chosen");
-       }
-       if(unitOfQuantityValue.equalsIgnoreCase("Unknown")){
-           throw new IllegalArgumentException("Unit of Quantity cannot be Unknown");
-       } else {
-           this.unitOfQuantity.set(unitOfQuantityValue);
-       }
-    }
+    @Override
+    public final String getPartNum(){return this.partNum.get();}
 
-    final int getID() {
-        return id.get();
-    }
+    public final String getPartName(){return this.partName.get();}
 
-    final String getPartNum() {
-        return partNum.get();
-    }
+    public final String getDropDownSelection(){return this.dropDownSelection.get();}
 
-    final String getPartName() {
-        return partName.get();
-    }
-
-    final String getVendor() {
+    public final String getVendor() {
         return vendor.get();
     }
 
-    final String getExPartNum(){
+    public final String getExPartNum(){
         return exPartNum.get();
     }
 
-    final String getUnitOfQuantity(){
-        return unitOfQuantity.get();
-    }
+    //not to be used - maybe throw exception
+    @Override
+    public int getQuantity() {return 0;}
+
 }

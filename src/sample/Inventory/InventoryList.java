@@ -1,94 +1,134 @@
 package sample.Inventory;
 
 import javafx.collections.FXCollections;
+import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import sample.CabinetronGateway;
+import sample.ItemModelPackage.InventoryModel;
+import sample.ItemModelPackage.ItemModel;
+import sample.Pair;
+import sample.TableListModel;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.SQLException;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 /**
  * Created by Stephen on 8/30/2017.
  */
- class InventoryList {
+ class InventoryList implements TableListModel{
 
-    private ObservableList<InventoryModel> inventoryModelList;
+    private ObservableList<ItemModel> inventoryModelList;
+    private ObservableMap<Pair, ItemModel> observableMap;
     private CabinetronGateway idg;
 
     InventoryList(){
-        this.inventoryModelList = FXCollections.observableArrayList();
-        idg = new InventoryTableGateway();
+        LinkedHashMap<Pair, ItemModel> itemModelMap = new LinkedHashMap<>();
+        observableMap = FXCollections.observableMap(itemModelMap);
+        this.inventoryModelList = FXCollections.observableArrayList(observableMap.values());
+        idg = InventoryTableGateway.getInstance();
+        observableMap.addListener((MapChangeListener.Change<? extends Pair, ? extends ItemModel> c) ->{
+            if(c.wasAdded()){
+                inventoryModelList.add(c.getValueAdded());
+            } else if (c.wasRemoved()){
+                inventoryModelList.remove(c.getValueRemoved());
+            }
+        });
     }
 
-    ObservableList<InventoryModel> getInventoryModelList() throws SQLException, IllegalArgumentException{
+    public ObservableList<ItemModel> getModelList() throws SQLException, IllegalArgumentException{
         CachedRowSet rowSet = idg.findAllRecords();
         while(rowSet.next()){
-            InventoryModel inventoryModel = new InventoryModel();
+            ItemModel inventoryModel = new InventoryModel();
             inventoryModel.setID(rowSet.getInt("Inventory_ID"));
-            inventoryModel.setPart(rowSet.getString("Part"));
-            inventoryModel.setLocation(rowSet.getString("Location"));
+            inventoryModel.setPartNum(rowSet.getString("Part"));
+            inventoryModel.setDropDownSelection(rowSet.getString("Location"));
             inventoryModel.setQuantity(rowSet.getInt("Quantity"));
-            inventoryModelList.add(inventoryModel);
+            // convert the key, pair to uppercase only for map
+            //Integer key = inventoryModel.getID();
+            Pair<Integer, String, String> pairKey = new Pair<>(inventoryModel.getID(), inventoryModel.getPartNum(),
+                    inventoryModel.getDropDownSelection());
+            observableMap.put(pairKey, inventoryModel);
         }
         rowSet.close();
         return inventoryModelList;
     }
 
-    void addToInventoryList(String[] inventoryDetails) throws IllegalArgumentException, SQLException{
-        for(InventoryModel i : inventoryModelList){
-            if(i.getPart().equalsIgnoreCase(inventoryDetails[0])){
-                if(i.getLocation().equalsIgnoreCase(inventoryDetails[1])) {
-                    throw new IllegalArgumentException("Part already exists at that Location");
-                }
-            }
+    @Override
+    public void addItemModelToList(String[] inventoryDetails) throws IllegalArgumentException, SQLException{
+        //if there is a value with partnumber and location at same index throw exception
+        String key = inventoryDetails[0];
+        String value = inventoryDetails[1];
+        Pair<Integer, String, String> pair = new Pair<>(key, value);
+        if(observableMap.containsKey(pair)){
+            throw new IllegalArgumentException("Part Number already exists at that Location");
         }
-        InventoryModel inventoryModel = new InventoryModel();
-        inventoryModel.setPart(inventoryDetails[0]);
-        inventoryModel.setLocation(inventoryDetails[1]);
+        ItemModel inventoryModel = new InventoryModel();
+        inventoryModel.setPartNum(inventoryDetails[0]);
+        inventoryModel.setDropDownSelection(inventoryDetails[1]);
         inventoryModel.setQuantity(inventoryDetails[2]);
-        inventoryModel.setID(idg.insertRecord(inventoryDetails));
-        inventoryModelList.add(inventoryModel);
+        int id = idg.insertRecord(inventoryDetails);
+        inventoryModel.setID(id);
+        pair.setId(id);
+        observableMap.put(pair, inventoryModel);
     }
 
-    void editInventoryList(String[] selectedInventory, int indexOfInventory) throws IllegalArgumentException,
-            SQLException{
-        for(int i = 0; i < inventoryModelList.size(); i++){
-            if(inventoryModelList.get(i).getPart().equalsIgnoreCase(selectedInventory[0]) && i != indexOfInventory){
-                if(inventoryModelList.get(i).getLocation().equalsIgnoreCase(selectedInventory[1])){
-                    throw new IllegalArgumentException("Part already exists at that Location");
-                }
+    @Override
+    public void editItemInList(String[] selectedItem) throws IllegalArgumentException, SQLException{
+        String key = selectedItem[1];
+        String val = selectedItem[2];
+        String currKey = selectedItem[4];
+        String currVal = selectedItem[5];
+        Integer quantity = Integer.parseInt(selectedItem[3]);
+        Integer id = Integer.parseInt(selectedItem[0]);
+        Pair<Integer,String, String> compositeKey = new Pair<>(id, key, val);
+        ItemModel currentModel;
+        ItemModel tempModel = observableMap.get(compositeKey);
+        if(tempModel != null && tempModel.getID() != id){
+            // inventory item exists and is not the currently selected item
+            throw new IllegalArgumentException("Iventory Item already exists");
+        } else{
+            // get the current key mapped for this id mapped in list
+            Pair<Integer, String, String> currCompositeKey = new Pair<>(id, currKey, currVal);
+            currentModel = observableMap.get(currCompositeKey);
+            if(currentModel != null){
+                // update db and map with new values
+                idg.updateRecord(selectedItem);
+                currentModel.setPartNum(key);
+                currentModel.setDropDownSelection(val);
+                currentModel.setQuantity(quantity);
+                observableMap.remove(currCompositeKey);
+                observableMap.put(compositeKey, currentModel);
+                Comparator<ItemModel> comparator = Comparator.comparing(ItemModel::getPartNum);
+                inventoryModelList.sort(comparator);
+            } else {
+                // item does not exist at all. this path should not occur
+                throw new IllegalArgumentException("Inventory Item does not exist");
             }
         }
-        idg.updateRecord(selectedInventory, inventoryModelList.get(indexOfInventory).getID());
-        inventoryModelList.get(indexOfInventory).setPart(selectedInventory[0]);
-        inventoryModelList.get(indexOfInventory).setLocation(selectedInventory[1]);
-        inventoryModelList.get(indexOfInventory).setQuantity(selectedInventory[2]);
     }
 
-    void deleteFromInventoryList(int deletionIndex, int id) throws NoSuchElementException, SQLException{
+    @Override public void deleteItemFromList(String[] itemDetails) throws NoSuchElementException, SQLException{
+        int deletionIndex = Integer.parseInt(itemDetails[0]);
+        Pair compositeKey = new Pair(itemDetails[1], itemDetails[2]);
         if(deletionIndex == -1){
             throw new NoSuchElementException("No element selected for deletion");
         }
         if(inventoryModelList == null || inventoryModelList.isEmpty()){
             throw new NoSuchElementException("List is empty");
         }
-        if(inventoryModelList.get(deletionIndex) != null) {
-            for(InventoryModel i : inventoryModelList){
-                if(i.getID() == id){
-                    if(i.getQuantity() == 0){
-                        inventoryModelList.remove(i);
-                        break;
-                    } else{
-                        throw new NoSuchElementException("Quantity must be 0 to delete inventory item");
-                    }
-
-                }
+        ItemModel invToBeDeleted = observableMap.get(compositeKey);
+        if(invToBeDeleted != null){
+            if(invToBeDeleted.getQuantity() == 0){
+                observableMap.remove(compositeKey);
+                idg.deleteRecord(invToBeDeleted.getID());
+            } else{
+                throw new IllegalArgumentException("Quantity must be greater than 0 to delete item");
             }
-            idg.deleteRecord(id);
-            //inventoryModelList.remove(deletionIndex);
-        } else {
-            throw new NoSuchElementException("Element does not exist");
+        } else{
+            throw new IllegalArgumentException("Inventory Item does not exist");
         }
+
     }
 }

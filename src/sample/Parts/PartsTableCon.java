@@ -4,10 +4,12 @@ import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import sample.ItemModelPackage.ItemModel;
+import sample.ItemModelPackage.PartModel;
+import sample.TableListModel;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.NoSuchElementException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,15 +19,15 @@ import java.util.logging.Logger;
  */
 public class PartsTableCon implements Initializable{
 
-    @FXML private TableView<PartModel> partsTable;
-    @FXML private TableColumn<PartModel, String> idCol;
-    @FXML private TableColumn<PartModel, String> partNumCol;
-    @FXML private TableColumn<PartModel, String> partNameCol;
-    @FXML private TableColumn<PartModel, String> vendorCol;
-    @FXML private TableColumn<PartModel, String> exPartNumCol;
-    @FXML private TableColumn<PartModel, String> uoqCol;
+    @FXML private TableView<ItemModel> partsTable;
+    @FXML private TableColumn<ItemModel, String> idCol;
+    @FXML private TableColumn<ItemModel, String> partNumCol;
+    @FXML private TableColumn<ItemModel, String> partNameCol;
+    @FXML private TableColumn<ItemModel, String> vendorCol;
+    @FXML private TableColumn<ItemModel, String> exPartNumCol;
+    @FXML private TableColumn<ItemModel, String> uoqCol;
 
-    private PartsList partsList;
+    private TableListModel partsList;
 
     public int selectedIndex(){
         return partsTable.getSelectionModel().getSelectedIndex();
@@ -41,10 +43,10 @@ public class PartsTableCon implements Initializable{
     }
 
     @SuppressWarnings("unchecked")
-    void populateTable(PartsList partsList){
+    void populateTable(TableListModel partsList){
         this.partsList = partsList;
         try {
-            partsTable.setItems(partsList.getPartModelList());
+            partsTable.setItems(partsList.getModelList());
             partsTable.getColumns().addAll();
             //partsTable.getColumns().addAll();
         } catch (SQLException se){
@@ -59,54 +61,16 @@ public class PartsTableCon implements Initializable{
     void deletePartInMemory(String partNum){
         try {
             System.out.println("in deletepartinmemory: " + partNum);
-            partsList.deleteFromList(partsTable.getSelectionModel().getSelectedIndex(), partNum);
+            String index = Integer.toString(partsTable.getSelectionModel().getSelectedIndex());
+            String[] details = {index, partNum};
+            partsList.deleteItemFromList(details);
         } catch (SQLException e){
             System.err.println(e.getMessage());
             e.printStackTrace();
         }
     }
-/*
-    //handle add buttons request
-    void addToList(String[] partDetails){
-        try {
-            partsList.addToPartList(partDetails);
-            partsTable.getSelectionModel().selectLast();
-        } catch (IllegalArgumentException iae){
-            Logger logger = Logger.getLogger(PartModel.class.getName());
-            logger.log(Level.WARNING, iae.toString(), iae.getMessage());
-        } catch (SQLException see){
-            Logger logger = Logger.getLogger(PartsList.class.getName());
-            logger.log(Level.WARNING, see.toString(), see.getMessage());
-        }
-    }
 
-    void editList(String[] partDetails){
-        try {
-            partsList.editPartList(partDetails, partsTable.getSelectionModel().getSelectedIndex());
-        } catch (IllegalArgumentException iee) {
-            Logger logger = Logger.getLogger(PartsList.class.getName());
-            logger.log(Level.WARNING, iee.toString(), iee.getMessage());
-        } catch (SQLException see){
-            Logger logger = Logger.getLogger(PartsList.class.getName());
-            logger.log(Level.WARNING, see.toString(), see.getMessage());
-        }
-    }
-
-    void deleteFromList(String id){
-        try{
-            // error here. need to get the id. not the table position
-            partsList.deletePartFromList(partsTable.getSelectionModel().getSelectedIndex(),
-                    Integer.parseInt(id));
-        } catch (NoSuchElementException nee){
-            Logger logger = Logger.getLogger(PartsList.class.getName());
-            logger.log(Level.WARNING, nee.toString(), nee.getMessage());
-        } catch (SQLException see){
-            Logger logger = Logger.getLogger(PartsList.class.getName());
-            logger.log(Level.WARNING, see.toString(), see.getMessage());
-        }
-    }*/
-
-    ReadOnlyObjectProperty<PartModel> getPartProperty(){
+    ReadOnlyObjectProperty<ItemModel> getPartProperty(){
         return partsTable.getSelectionModel().selectedItemProperty();
     }
 
