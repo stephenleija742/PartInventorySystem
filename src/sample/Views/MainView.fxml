@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity"
+               tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab closable="false" text="Parts">
+            <content>
+                <fx:include fx:id="partsFirstRun" source="PartsFirstRun.fxml" />
+            </content>
+          </Tab>
+          <Tab closable="false" text="Inventory">
+            <content>
+                <fx:include fx:id="inventory" source="Inventory.fxml" />
+            </content>
+          </Tab>
+            <Tab closable="false" text="Product Templates">
+                <fx:include fx:id="productTemplateList" source="ProductTemplateListView.fxml" />
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+
+<BorderPane fx:controller="sample.Controllers.AddPartDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Add Part"
+                       textAlignment="CENTER" HBox.hgrow="NEVER" fx:id="headerLabel">
+                    <font>
+                        <Font size="40.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Part Number:">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="partNumberField" maxWidth="350.0" prefWidth="350.0"
+                           GridPane.columnIndex="1" />
+                <Label text="Part Name:" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="partNameField" maxWidth="-Infinity" prefWidth="350.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="vendorField" maxWidth="-Infinity" prefWidth="350.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Vendor:" GridPane.rowIndex="2">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="uoqSelection" prefWidth="350.0" promptText="Unknown" visibleRowCount="20"
+                          GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Linear Feet" />
+                            <String fx:value="Pieces" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <Label text="Unit Of Quantity:" GridPane.rowIndex="3">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label text="External Part Number:" GridPane.rowIndex="4">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="exPartNumField" maxWidth="-Infinity" prefWidth="350.0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="saveButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Save">
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Cancel">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

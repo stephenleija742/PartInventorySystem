@@ -5,11 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import sample.Parts.PartsFirstRunController;
-
-import java.net.URL;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import sample.Controllers.PartsFirstRunController;
 
 public class Main extends Application {
 
@@ -28,7 +24,7 @@ public class Main extends Application {
 
         //AnchorPane anchorPane = fxmlLoader.load();
         //PartsFirstRunController partsFirstRunController = fxmlLoader.getController();
-        AnchorPane root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        AnchorPane root = FXMLLoader.load(getClass().getResource("Views/MainView.fxml"));
         Scene scene = new Scene(root);
 
         Stage stage = new Stage();

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<GridPane prefHeight="651.0" prefWidth="300.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.PartDetailFields">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+        </rowConstraints>
+        <children>
+            <Label text="ID:" />
+            <TextField fx:id="idField" GridPane.columnIndex="1" />
+            <Label text="Part Number:" GridPane.rowIndex="1" />
+            <TextField fx:id="partNumField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Part Name:" GridPane.rowIndex="2" />
+            <TextField fx:id="partNameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Vendor:" GridPane.rowIndex="3" />
+            <TextField fx:id="vendorField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="unitOfQuantityBox" editable="true" prefWidth="150.0" promptText="Unit Of Quantity" value="Unknown" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Linear Feet" />
+                        <String fx:value="Pieces" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label text="Unit Of Quantity" GridPane.rowIndex="4" />
+            <Label text="External Part Number:" GridPane.rowIndex="5" />
+            <TextField fx:id="externalPartNumField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        </children>
+    </GridPane>
