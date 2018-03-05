@@ -25,6 +25,7 @@ public class AddProductTemplateDialog implements Initializable, ItemDialogInterf
     @FXML private Button saveButton;
     @FXML private Button cancelButton;
     @FXML private Label headerLabel;
+    private String previousProdNumber;
     private int id;
 
     private TableListModel prodTemplateList;
@@ -57,11 +58,12 @@ public class AddProductTemplateDialog implements Initializable, ItemDialogInterf
     public void initialize(URL location, ResourceBundle resources) {  }
 
     @Override
-    public void initDataAndListeners(TableListModel listModelReference) {
+    public void initDataAndListeners(TableListModel listModelReference, Boolean isEditable) {
+        prodNumberField.setEditable(isEditable);
         prodTemplateList = listModelReference;
         saveButton.setOnAction(event ->{
             try {
-                if (headerLabel.getText().equals("Add Product")) {
+                if (headerLabel.getText().equals("Add Product Template")) {
                     String[] prodDetails = {getProdNumber(), getDescription()};
                     prodTemplateList.addItemModelToList(prodDetails);
                 } else {

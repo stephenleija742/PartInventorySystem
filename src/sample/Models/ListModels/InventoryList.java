@@ -68,6 +68,9 @@ import java.util.*;
         inventoryModel.setDropDownSelection(inventoryDetails[1]);
         inventoryModel.setQuantity(inventoryDetails[2]);
         int id = idg.insertRecord(inventoryDetails);
+        if(id == 0){
+            throw new IllegalArgumentException("Invalid Part Number given");
+        }
         inventoryModel.setID(id);
         pair.setId(id);
         observableMap.put(pair, inventoryModel);

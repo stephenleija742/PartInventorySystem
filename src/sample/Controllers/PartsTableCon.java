@@ -68,10 +68,6 @@ public class PartsTableCon extends TableController implements Initializable{
         }
     }*/
 
-    ReadOnlyObjectProperty<ItemModel> getPartProperty(){
-        return table.getSelectionModel().selectedItemProperty();
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

@@ -65,7 +65,4 @@ public class InventoryTable extends TableController implements Initializable {
         }
     }*/
 
-    ReadOnlyObjectProperty<ItemModel> getInventoryProperty(){
-        return table.getSelectionModel().selectedItemProperty();
-    }
 }

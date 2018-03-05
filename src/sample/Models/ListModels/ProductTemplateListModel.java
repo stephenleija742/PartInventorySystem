@@ -45,7 +45,7 @@ public class ProductTemplateListModel implements TableListModel {
             templateModel.setID(rowSet.getInt("ProductTemplateID"));
             templateModel.setProdNum(rowSet.getString("ProductNum"));
             templateModel.setProdDescription(rowSet.getString("ProductDescription"));
-            observableMap.put(templateModel.getPartNum(), templateModel);
+            observableMap.put(templateModel.getProdNum(), templateModel);
         }
         rowSet.close();
         return prodModelList;

@@ -32,6 +32,7 @@ public class ProductTemplateListController extends ItemDetail implements Initial
     @FXML private Button editTemplate;
     @FXML private GridPane grid;
     @FXML private ProdTemp prodTempController;
+    @FXML ProdTemplatePartController prodTemplatePartController;
     private Stage parentStage;
     private TableListModel prodList;
 
@@ -42,29 +43,30 @@ public class ProductTemplateListController extends ItemDetail implements Initial
     public void initialize(URL location, ResourceBundle resources) {
         prodList = new ProductTemplateListModel();
         prodTempController.setColumnsFactories();
-        /*prodTempListTableController.populateTable(prodList);
-        ReadOnlyObjectProperty<ItemModel> rowSelectionProperty = prodTempListTableController.getPartProperty();
+        prodTempController.populateTable(prodList);
+        ReadOnlyObjectProperty<ItemModel> rowSelectionProperty = prodTempController.getItemProperty();
 
-        addButton.setOnAction(event -> initDialogParameters("Add Product Template"));
+        addTemplate.setOnAction(event -> initDialogParameters("Add Product Template"));
 
-        editButton.setOnAction(event -> initDialogParameters("Edit Product Template"));
+        editTemplate.setOnAction(event -> initDialogParameters("Edit Product Template"));
 
-        deleteButton.setOnAction(event -> {
-           String[] details = {Integer.toString(prodTempListTableController.selectedIndex()), prodNum};
-           prodTempListTableController.deletePartInMemory(details);
+        deleteTemplate.setOnAction(event -> {
+           String[] details = {Integer.toString(prodTempController.selectedIndex()), prodNum};
+            prodTempController.deletePartInMemory(details);
         });
 
         rowSelectionProperty.addListener(((observable, oldValue, newValue) -> {
-            ProductTemplateModel selectedItem = new ProductTemplateModel();
+            ProductTemplateModel selectedItem = (ProductTemplateModel)observable.getValue();
             prodID = selectedItem.getID();
             prodNum = selectedItem.getProdNum();
             prodDescription = selectedItem.getProdDescription();
-        }));*/
+        }));
     }
 
     @Override
     protected void initDialogParameters(String dialogAction) {
-        /*BorderPane childRoot;
+        prodTemplatePartController.print();
+        BorderPane childRoot;
         Scene scene;
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../Views/AddProductTemplateDialog.fxml"));
@@ -79,8 +81,11 @@ public class ProductTemplateListController extends ItemDetail implements Initial
                 addProductTemplateDialog.setIDParam(prodID);
                 addProductTemplateDialog.setProdNumberField(prodNum);
                 addProductTemplateDialog.setDescriptionField(prodDescription);
+                addProductTemplateDialog.initDataAndListeners(prodList, false);
+            } else{
+                addProductTemplateDialog.initDataAndListeners(prodList, true);
             }
-            addProductTemplateDialog.initDataAndListeners(prodList);
+
             newStage.initOwner(parentStage);
             newStage.initModality(Modality.APPLICATION_MODAL);
             newStage.showAndWait();
@@ -88,6 +93,6 @@ public class ProductTemplateListController extends ItemDetail implements Initial
             e.getMessage();
             e.getCause();
             e.printStackTrace();
-        }*/
+        }
     }
 }

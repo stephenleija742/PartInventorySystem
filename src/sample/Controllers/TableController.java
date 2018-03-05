@@ -1,5 +1,7 @@
 package sample.Controllers;
 
+import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
 import sample.Models.DetailModels.ItemModel;
@@ -28,8 +30,10 @@ import java.util.logging.Logger;
             table.setItems(listModel.getModelList());
             table.getColumns().addAll();
         } catch (SQLException | IllegalArgumentException e){
+            e.printStackTrace();
             Logger logger = Logger.getLogger(ItemModel.class.getName());
             logger.log(Level.WARNING, e.toString(), e.getMessage());
+            e.getCause();
         }
     }
 
@@ -47,5 +51,9 @@ import java.util.logging.Logger;
             logger.log(Level.WARNING, e.toString(), e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    ReadOnlyObjectProperty<ItemModel> getItemProperty(){
+        return table.getSelectionModel().selectedItemProperty();
     }
 }

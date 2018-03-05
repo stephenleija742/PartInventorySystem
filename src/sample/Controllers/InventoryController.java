@@ -45,7 +45,7 @@ public class InventoryController extends ItemDetail implements Initializable {
         //inventoryTableController = new InventoryTable();
         inventoryTableController.setColumnsFactories();
         inventoryTableController.populateTable(inventoryList);
-        ReadOnlyObjectProperty<ItemModel> rowSelectionProperty = inventoryTableController.getInventoryProperty();
+        ReadOnlyObjectProperty<ItemModel> rowSelectionProperty = inventoryTableController.getItemProperty();
 
         //setStateAndActions(addInventory, editInventory, "Inventory");
 
@@ -83,8 +83,10 @@ public class InventoryController extends ItemDetail implements Initializable {
                 addInventoryDialog.setPartNumberField(partNum);
                 addInventoryDialog.setLocationSelection(invLocation);
                 addInventoryDialog.setQuantityField(Integer.toString(quantity));
+                addInventoryDialog.initDataAndListeners(inventoryList, false);
+            } else{
+                addInventoryDialog.initDataAndListeners(inventoryList, true);
             }
-            addInventoryDialog.initDataAndListeners(inventoryList);
             newStage.initOwner(parentStage);
             newStage.initModality(Modality.APPLICATION_MODAL);
             newStage.showAndWait();

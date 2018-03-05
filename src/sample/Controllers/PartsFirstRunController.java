@@ -47,7 +47,7 @@ public class PartsFirstRunController extends ItemDetail implements Initializable
         partsTableConController.populateTable(partsList);
         partDetailFieldsController.setIDFieldUneditable();
         partDetailFieldsController.setUnitOfQuantityBoxUneditable();
-        ReadOnlyObjectProperty<ItemModel> rowSelectionProperty = partsTableConController.getPartProperty();
+        ReadOnlyObjectProperty<ItemModel> rowSelectionProperty = partsTableConController.getItemProperty();
 
         addButton.setOnAction(event -> initDialogParameters("Add Part"));
 
@@ -83,13 +83,17 @@ public class PartsFirstRunController extends ItemDetail implements Initializable
             addPartDialog.setHeaderLabel(dialogAction);
             if(dialogAction.equalsIgnoreCase("Edit Part")){
                 addPartDialog.setIDParam(partID);
+                addPartDialog.setInitialPartNumber(partNum);
                 addPartDialog.setPartNumberField(partNum);
                 addPartDialog.setPartNameField(partName);
                 addPartDialog.setVendorField(vendor);
                 addPartDialog.setUnitOfQuantitySelection(dropDownSelection);
                 addPartDialog.setExPartNumField(externalPartNum);
+                addPartDialog.initDataAndListeners(partsList, false);
+            } else{
+                addPartDialog.initDataAndListeners(partsList, true);
             }
-            addPartDialog.initDataAndListeners(partsList);
+
             newStage.initOwner(parentStage);
             newStage.initModality(Modality.APPLICATION_MODAL);
             newStage.showAndWait();

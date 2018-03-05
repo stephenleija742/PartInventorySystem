@@ -24,17 +24,12 @@ public class ProdTemp extends TableController implements Initializable{
 
     }
 
-    /*int selectedIndex() {return table.getSelectionModel().getSelectedIndex();}*/
+    int selectedIndex() {return table.getSelectionModel().getSelectedIndex();}
 
     void setColumnsFactories(){
         prodNumCol.setCellValueFactory(new PropertyValueFactory<>("prodNum"));
         prodDescriptionCol.setCellValueFactory(new PropertyValueFactory<>("prodDescription"));
         setTable(table);
     }
-
-    /*ReadOnlyObjectProperty<ItemModel> getPartProperty(){
-        return table.getSelectionModel().selectedItemProperty();
-    }*/
-
 
 }

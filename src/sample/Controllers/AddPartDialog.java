@@ -24,6 +24,7 @@ public class AddPartDialog implements Initializable, ItemDialogInterface{
     @FXML private Button cancelButton;
     @FXML private Label headerLabel;
     private TableListModel partsList;
+    private String previousPartNumber;
 
     //public int rowIndex;
     public int id;
@@ -46,6 +47,8 @@ public class AddPartDialog implements Initializable, ItemDialogInterface{
     @Contract(pure = true)
     private StringProperty exPartNumProperty(){return exPartNumField.textProperty();}
 
+    void setInitialPartNumber(String initialPartNumber){previousPartNumber = initialPartNumber;}
+
     private String getPartNumber(){return partNumberProperty().get();}
 
     private String getPartName(){return partNameProperty().get();}
@@ -62,7 +65,9 @@ public class AddPartDialog implements Initializable, ItemDialogInterface{
         headerLabel.setText(headerLabelReference);
     }
 
-    void setPartNumberField(String partNumberFieldRef){partNumberField.setText(partNumberFieldRef);}
+    void setPartNumberField(String partNumberFieldRef){
+        partNumberField.setText(partNumberFieldRef);
+    }
 
     void setPartNameField(String partNameFieldRef){partNameField.setText(partNameFieldRef);}
 
@@ -76,7 +81,8 @@ public class AddPartDialog implements Initializable, ItemDialogInterface{
 
     void setExPartNumField(String exPartNumFieldRef){exPartNumField.setText(exPartNumFieldRef);}
 
-    public void initDataAndListeners(TableListModel partsListReference){
+    public void initDataAndListeners(TableListModel partsListReference, Boolean isEditable){
+        partNumberField.setEditable(isEditable);
         partsList = partsListReference;
         saveButton.setOnAction(event -> {
             try {
@@ -86,7 +92,7 @@ public class AddPartDialog implements Initializable, ItemDialogInterface{
                     partsList.addItemModelToList(partDetails);
                 } else {
                     String[] partDetails = {getID(), getPartNumber(), getPartName(),getVendor(),
-                            getUnitOfQuantity(), getExPartNum()};
+                            getUnitOfQuantity(), getExPartNum(), previousPartNumber};
                     partsList.editItemInList(partDetails);
                 }
                 saveButton.getScene().getWindow().hide();

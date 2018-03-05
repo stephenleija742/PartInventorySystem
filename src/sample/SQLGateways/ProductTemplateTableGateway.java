@@ -78,7 +78,8 @@ public class ProductTemplateTableGateway implements CabinetronGateway{
         try (Connection conn = pds.getConnection();
              PreparedStatement preparedStatement = conn.prepareStatement(tableEditStr)) {
             //preparedStatement.setString(1, templateDetails[0]);
-            preparedStatement.setString(2, templateDetails[0]);
+            preparedStatement.setString(1, templateDetails[1]);
+            preparedStatement.setString(2, templateDetails[2]);
             preparedStatement.setString(3, templateDetails[1]);
             preparedStatement.executeUpdate();
         }

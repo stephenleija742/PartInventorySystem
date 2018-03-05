@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="690.0" prefWidth="879.0"
+            BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ProdTempListTableController">
+    <content>
+        <TableView fx:id="table" prefHeight="690.0" prefWidth="879.0">
+            <columns>
+                <TableColumn fx:id="prodNumCol" prefWidth="279.0" text="Product Number" />
+                <TableColumn fx:id="prodDescriptionCol" prefWidth="600.0" text="Product Description" />
+            </columns>
+        </TableView>
+    </content>
+</ScrollPane>

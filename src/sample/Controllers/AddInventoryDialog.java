@@ -66,7 +66,8 @@ public class AddInventoryDialog implements Initializable, ItemDialogInterface {
     }
 
     @Override
-    public void initDataAndListeners(TableListModel inventoryListReference){
+    public void initDataAndListeners(TableListModel inventoryListReference, Boolean isEditable){
+        partNumberField.setEditable(isEditable);
         inventoryList = inventoryListReference;
         saveButton.setOnAction(event -> {
             try {

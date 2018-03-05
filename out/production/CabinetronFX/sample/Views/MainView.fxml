@@ -23,7 +23,10 @@
             </content>
           </Tab>
             <Tab closable="false" text="Product Templates">
-                <fx:include fx:id="productTemplateList" source="ProductTemplateListView.fxml" />
+                <fx:include fx:id="productTemplateListController" source="ProductTemplateListView.fxml" />
+            </Tab>
+            <Tab closable="false" text="Product Template Parts">
+                <fx:include fx:id="prodTemplatePartController" source="TemplatePart.fxml" />
             </Tab>
         </tabs>
       </TabPane>
