@@ -3,9 +3,12 @@ package sample.SQLGateways;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import com.sun.rowset.CachedRowSetImpl;
+import org.omg.CORBA.SystemException;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.*;
+import java.util.Date;
+import java.util.*;
 
 /**
  * Created by Stephen on 9/3/2017.
@@ -25,6 +28,10 @@ public class InventoryTableGateway implements CabinetronGateway{
             "UPDATE inventory SET Part = ?, Location = ?, Quantity = ? " +
             "WHERE Inventory_ID = ?";
     private static final String inventoryDeleteStr = "DELETE FROM inventory where Inventory_ID = ?";
+    private static final String inventoryUpdateStr = "UPDATE inventory SET Part = ?, Location = ?, Quantity = ? " +
+            "WHERE Inventory_ID = ? and last_modified = ?";
+    private static final String findInventoryByID = "SELECT last_modified FROM inventory WHERE Inventory_ID = ?";
+    private static final String findVersionByID = "SELECT * FROM inventory WHERE Inventory_ID = ?";
 
     public static InventoryTableGateway getInstance(){
         if(uniqueInstance == null){
@@ -71,16 +78,66 @@ public class InventoryTableGateway implements CabinetronGateway{
         return dbID;
     }
 
+    @Override
+    public Timestamp getDateTime(int id) throws SQLException{
+        ResultSet rs;
+        Timestamp lastModified;
+        try(Connection conn = pds.getConnection();
+            PreparedStatement preparedStatement = conn.prepareStatement(findInventoryByID)){
+            preparedStatement.setInt(1, id);
+            rs = preparedStatement.executeQuery();
+            if(rs.next()){
+                lastModified = rs.getTimestamp("last_modified");
+            } else{
+                throw new SQLException("ID does not exist");
+            }
+        }
+        return lastModified;
+    }
+
     // take out 2nd parameter
     @Override
-    public void updateRecord(String[] inventoryDetails, int indexToUpdate) throws SQLException {
+    public int updateRecord(String[] inventoryDetails, Timestamp lastModified) throws SQLException {
+        int returnValue = 1;
+        int quantity = Integer.parseInt(inventoryDetails[3]);
+        int id = Integer.parseInt(inventoryDetails[0]);
         try(Connection conn = pds.getConnection();
-            PreparedStatement preparedStatement = conn.prepareStatement(inventoryEditStr)){
-            preparedStatement.setString(1, inventoryDetails[0]); //part
-            preparedStatement.setString(2, inventoryDetails[1]); //location
-            preparedStatement.setInt(3, Integer.parseInt(inventoryDetails[2])); //quantity
-            preparedStatement.setInt(4, Integer.parseInt(inventoryDetails[3])); //id
-            preparedStatement.executeUpdate();
+            PreparedStatement preparedStatement = conn.prepareStatement(inventoryUpdateStr)){
+            //lastModified = getDateTime(Integer.parseInt(inventoryDetails[0]));
+            preparedStatement.setString(1, inventoryDetails[1]); //part
+            preparedStatement.setString(2, inventoryDetails[2]); //location
+            preparedStatement.setInt(3, quantity); //quantity
+            preparedStatement.setInt(4, id); //id
+            preparedStatement.setTimestamp(5, lastModified);
+            if((preparedStatement.executeUpdate()) == 0){
+                concurrencyException(id, lastModified);
+            }
+        } catch (SQLException sqlEx){
+            throw new SQLException("Unexpected error deleting inventory");
+        }
+        return returnValue;
+    }
+
+    //@Override
+    private void concurrencyException(int id, Timestamp lastModifiedLocal) throws SQLException{
+        ResultSet rs;
+        try(Connection conn = pds.getConnection();
+            PreparedStatement preparedStatement = conn.prepareStatement(findVersionByID)){
+            preparedStatement.setInt(1, id);
+            rs = preparedStatement.executeQuery();
+            if(rs.next()){
+                String part = rs.getString("Part");
+                String location = rs.getString("Location");
+                Timestamp timestampVersionInDB = rs.getTimestamp("last_modified");
+                if(timestampVersionInDB.after(lastModifiedLocal)){
+                    throw new ConcurrentModificationException("Part: " + part + " at " + location + " was modified at "
+                            + timestampVersionInDB);
+                } else{
+                    throw new RuntimeException("Error checking timestamp");
+                }
+            } else {
+                throw new ConcurrentModificationException("Inventory does not exist in database");
+            }
         }
     }
 

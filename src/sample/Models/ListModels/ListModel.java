@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import sample.Models.DetailModels.ItemModel;
 
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.NoSuchElementException;
 
 /**
@@ -13,6 +14,7 @@ public interface ListModel {
 
     ObservableList<ItemModel> getItemModelFromList() throws SQLException;
     void addItemToList(String[] itemDetails) throws IllegalArgumentException, SQLException;
-    void editListItem(String[] selectedItem) throws IllegalArgumentException, SQLException;
+    int editListItem(String[] selectedItem) throws IllegalArgumentException, SQLException;
     void deleteItemFromList(int deletionIndex, String partNum) throws NoSuchElementException, SQLException;
+
 }

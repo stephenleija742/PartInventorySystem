@@ -11,6 +11,8 @@ import sample.SQLGateways.InventoryTableGateway;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.*;
 
 /**
@@ -77,7 +79,22 @@ import java.util.*;
     }
 
     @Override
-    public void editItemInList(String[] selectedItem) throws IllegalArgumentException, SQLException{
+    public Timestamp getLock(String id) throws SQLException{
+        Timestamp lock;
+        try {
+            lock = idg.getDateTime(Integer.parseInt(id));
+        } catch (SQLException sqlEx){
+            throw new SQLException("Cannot find this id");
+        }
+        return lock;
+    }
+
+    @Override
+    public void editItemInList(String[] selectedItem) throws IllegalArgumentException, SQLException{}
+
+    @Override
+    public int editItemInList(String[] selectedItem, Timestamp lock) throws IllegalArgumentException, SQLException {
+        int successfulUpdate = 0;
         String key = selectedItem[1];
         String val = selectedItem[2];
         String currKey = selectedItem[4];
@@ -96,10 +113,10 @@ import java.util.*;
             currentModel = observableMap.get(currCompositeKey);
             if(currentModel != null){
                 // update db and map with new values
-                idg.updateRecord(selectedItem);
                 currentModel.setPartNum(key);
                 currentModel.setDropDownSelection(val);
                 currentModel.setQuantity(quantity);
+                idg.updateRecord(selectedItem, lock);
                 observableMap.remove(currCompositeKey);
                 observableMap.put(compositeKey, currentModel);
                 Comparator<ItemModel> comparator = Comparator.comparing(ItemModel::getPartNum);
@@ -109,6 +126,18 @@ import java.util.*;
                 throw new IllegalArgumentException("Inventory Item does not exist");
             }
         }
+        return successfulUpdate;
+    }
+
+    @Override
+    public void reloadView() throws SQLException{
+        inventoryModelList.clear();
+        getModelList();
+    }
+
+    public void refreshList() throws SQLException{
+        inventoryModelList.clear();
+        inventoryModelList = getModelList();
     }
 
     @Override public void deleteItemFromList(String[] itemDetails) throws NoSuchElementException, SQLException{

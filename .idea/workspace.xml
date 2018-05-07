@@ -4,58 +4,44 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/sample/SQLGateways/PartsTableGateway.java" line="33" />
+    <bookmark url="file://$PROJECT_DIR$/src/sample/SQLGateways/PartsTableGateway.java" line="34" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Controllers/AddProductTemplatePartDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Controllers/ProdTemplatePartController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Controllers/TemplatePartTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Models/DetailModels/TemplatePartModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartListSingleton.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Views/AddTemplatePart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Views/AddTemplatePartDialog.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Views/TemplatePart.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/Views/TemplatePartTable.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/AddInventoryDialog.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/AddInventoryDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/AddPartDialog.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/AddPartDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/AddProductTemplateDialog.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/AddProductTemplateDialog.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/InventoryController.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/InventoryController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/InventoryTable.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/InventoryTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/ItemDialogInterface.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/ItemDialogInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/PartsFirstRunController.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/PartsFirstRunController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/PartsTableCon.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/PartsTableCon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/ProdTemp.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/ProdTemp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/ProductTemplateListController.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/ProductTemplateListController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/TableController.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/TableController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/TemplatePartTable.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Controllers/TemplatePartTable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/InventoryList.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/InventoryList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/ListModel.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/ListModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/PartsList.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/PartsList.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/ProductTemplateListModel.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/ProductTemplateListModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/TableListModel.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/TableListModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/TemplatePartList.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Models/ListModels/TemplatePartList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/CabinetronGateway.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/CabinetronGateway.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/InventoryTableGateway.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/InventoryTableGateway.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/PartsTableGateway.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/PartsTableGateway.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/ProductTemplateTableGateway.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/ProductTemplateTableGateway.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/TemplatePartGateway.class" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/SQLGateways/TemplatePartGateway.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TempProdTemplateListTablefxml" afterPath="$PROJECT_DIR$/TempProdTemplateListTablefxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TempProductTempListTableControllerJava" afterPath="$PROJECT_DIR$/TempProductTempListTableControllerJava" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TempProductTemplateListControllerJava" afterPath="$PROJECT_DIR$/TempProductTemplateListControllerJava" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TempProductTemplateListViewfxml" afterPath="$PROJECT_DIR$/TempProductTemplateListViewfxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Views/MainView.fxml" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Views/MainView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Views/ProductTemplateListView.fxml" afterPath="$PROJECT_DIR$/out/production/CabinetronFX/sample/Views/ProductTemplateListView.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/AddInventoryDialog.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/AddInventoryDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/AddProductTemplateDialog.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/AddProductTemplateDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/InventoryController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/InventoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/InventoryTable.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/InventoryTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/ItemDialogInterface.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/ItemDialogInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/PartsFirstRunController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/PartsFirstRunController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/PartsTableCon.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/PartsTableCon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/ProdTemp.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/ProdTemp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/ProductTemplateListController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/ProductTemplateListController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/TableController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/TableController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Controllers/TemplatePartTable.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/TemplatePartTable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Models/ListModels/InventoryList.java" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/InventoryList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Models/ListModels/ListModel.java" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/ListModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Models/ListModels/PartsList.java" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/PartsList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Models/ListModels/ProductTemplateListModel.java" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/ProductTemplateListModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Models/ListModels/TableListModel.java" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/TableListModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartListSingleton.java" afterPath="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartListSingleton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/SQLGateways/CabinetronGateway.java" afterPath="$PROJECT_DIR$/src/sample/SQLGateways/CabinetronGateway.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/SQLGateways/InventoryTableGateway.java" afterPath="$PROJECT_DIR$/src/sample/SQLGateways/InventoryTableGateway.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/SQLGateways/PartsTableGateway.java" afterPath="$PROJECT_DIR$/src/sample/SQLGateways/PartsTableGateway.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/SQLGateways/ProductTemplateTableGateway.java" afterPath="$PROJECT_DIR$/src/sample/SQLGateways/ProductTemplateTableGateway.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Views/MainView.fxml" afterPath="$PROJECT_DIR$/src/sample/Views/MainView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Views/ProductTemplateListView.fxml" afterPath="$PROJECT_DIR$/src/sample/Views/ProductTemplateListView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java" afterPath="$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -120,37 +106,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="TemplatePartList.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java">
+      <file leaf-file-name="AddInventoryDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddInventoryDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+            <state relative-caret-position="2222">
+              <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
               <folding>
-                <element signature="method#addItemModelToList#0;class#TemplatePartList#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TemplatePartListSingleton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartListSingleton.java">
+      <file leaf-file-name="AddPartDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="1892">
+              <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="104" selection-end-column="29" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TemplatePartGateway.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="54" />
-              <folding>
-                <element signature="method#insertRecord#0;class#TemplatePartGateway#0" expanded="false" />
-                <element signature="method#updateRecord#0;class#TemplatePartGateway#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -158,57 +131,49 @@
       <file leaf-file-name="PartsFirstRunController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controllers/PartsFirstRunController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="880">
+              <caret line="56" column="100" selection-start-line="56" selection-start-column="100" selection-end-line="56" selection-end-column="100" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductTemplateListModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/ProductTemplateListModel.java">
+      <file leaf-file-name="TableController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TableController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="748">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddProductTemplatePartDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddProductTemplatePartDialog.java">
+      <file leaf-file-name="PartsList.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/PartsList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1430">
-              <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="463">
+              <caret line="114" column="33" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProdTemplatePartController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProdTemplatePartController.java">
+      <file leaf-file-name="PartsTableCon.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/PartsTableCon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2507#2508#0" expanded="true" />
-                <element signature="e#2549#2550#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="154">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductTemplateListController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProductTemplateListController.java">
+      <file leaf-file-name="PartsTableGateway.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/PartsTableGateway.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1474">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="2090">
+              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -241,10 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
-        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/Pair.java" />
-        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/TableListModel.java" />
-        <option value="$PROJECT_DIR$/src/sample/SQLGateways/CabinetronGateway.java" />
         <option value="$PROJECT_DIR$/src/sample/Models/DetailModels/ProductTemplateModel.java" />
         <option value="$PROJECT_DIR$/src/sample/Views/AddProductTemplateDialog.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Views/AddProductTemplateDialog.java" />
@@ -264,34 +225,38 @@
         <option value="$PROJECT_DIR$/src/sample/Views/ProductTemplateListTable.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Views/ProdTempTable.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Views/ProductTemplateListView.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/ProductTemplateListModel.java" />
-        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/PartsList.java" />
-        <option value="$PROJECT_DIR$/src/sample/SQLGateways/ProductTemplateTableGateway.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/ItemDialogInterface.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/AddProductTemplateDialog.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/AddInventoryDialog.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/PartsFirstRunController.java" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/InventoryController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/InventoryTable.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/PartsTableCon.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/ProdTemp.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/AddTemplatePartDialog.java" />
         <option value="$PROJECT_DIR$/src/sample/Views/TemplatePart.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Views/TemplatePartTable.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/TemplatePartTable.java" />
         <option value="$PROJECT_DIR$/src/sample/Views/MainView.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controllers/TableController.java" />
-        <option value="$PROJECT_DIR$/src/sample/SQLGateways/InventoryTableGateway.java" />
         <option value="$PROJECT_DIR$/src/sample/Views/AddTemplatePartDialog.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Models/DetailModels/TemplatePartModel.java" />
-        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/InventoryList.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/AddProductTemplatePartDialog.java" />
-        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java" />
-        <option value="$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/ProdTemplatePartController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/ProductTemplateListController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/TemplatePartTable.java" />
         <option value="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartListSingleton.java" />
+        <option value="$PROJECT_DIR$/src/sample/SQLGateways/CabinetronGateway.java" />
+        <option value="$PROJECT_DIR$/src/sample/SQLGateways/PartsTableGateway.java" />
+        <option value="$PROJECT_DIR$/src/sample/SQLGateways/ProductTemplateTableGateway.java" />
+        <option value="$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java" />
+        <option value="$PROJECT_DIR$/src/sample/SQLGateways/InventoryTableGateway.java" />
+        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/ListModel.java" />
+        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/ProductTemplateListModel.java" />
+        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java" />
+        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/InventoryList.java" />
+        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/TableListModel.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/InventoryController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/AddInventoryDialog.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/PartsFirstRunController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Controllers/TableController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Models/ListModels/PartsList.java" />
       </list>
     </option>
   </component>
@@ -354,12 +319,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -691,8 +656,8 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -721,12 +686,46 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3894967" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3894967" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42778993" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822758" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934355" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3894967" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18697916" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -744,90 +743,126 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java</url>
-          <line>95</line>
-          <properties />
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java</url>
           <line>68</line>
           <properties />
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
-          <line>69</line>
+          <line>75</line>
           <properties />
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
-          <line>76</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="135" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/SQLGateways/InventoryTableGateway.java</url>
-          <line>64</line>
-          <properties />
-          <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java</url>
-          <line>64</line>
+          <line>66</line>
           <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
-          <line>98</line>
+          <line>114</line>
           <properties />
           <option name="timeStamp" value="166" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
-          <line>94</line>
+          <line>110</line>
           <properties />
           <option name="timeStamp" value="167" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
-          <line>105</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
-          <line>112</line>
+          <line>127</line>
           <properties />
           <option name="timeStamp" value="171" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
-          <line>103</line>
+          <line>118</line>
           <properties />
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
-          <line>102</line>
+          <line>117</line>
           <properties />
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Controllers/ProductTemplateListController.java</url>
-          <line>67</line>
+          <url>file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java</url>
+          <line>147</line>
           <properties />
-          <option name="timeStamp" value="175" />
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java</url>
+          <line>97</line>
+          <properties />
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java</url>
+          <line>95</line>
+          <properties />
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java</url>
+          <line>130</line>
+          <properties />
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controllers/AddInventoryDialog.java</url>
+          <line>105</line>
+          <properties />
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controllers/InventoryController.java</url>
+          <line>63</line>
+          <properties />
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/Controllers/TableController.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="226" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="176" />
+      <option name="time" value="228" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -836,39 +871,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/com/sun/javafx/application/LauncherImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="2440" column="0" selection-start-line="2440" selection-start-column="0" selection-end-line="2440" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProdTempListTableController.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProdTempListTable.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Views/ProductTemplateListTable.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProdTempTable.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/Views/PartsTable.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/javafx/fxml/Initializable.java">
@@ -879,13 +891,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Views/PartsFirstRun.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/javafx-src.zip!/com/sun/javafx/event/EventHandlerManager.java">
@@ -902,56 +914,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/PartsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="76" column="100" selection-start-line="76" selection-start-column="100" selection-end-line="76" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="84" column="46" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Views/Inventory.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Views/AddProductTemplateDialog.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Views/AddProductTemplateDialog.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-231">
           <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Views/ProdTempTable.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Views/ProdTempTable.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Models/DetailModels/ItemModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,13 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/PartsTableCon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Views/AddTemplatePart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -983,123 +972,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddInventoryDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Views/ProductTemplateListView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/InventoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-426">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/TableListModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Views/TemplatePart.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Views/TemplatePartTable.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="85" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Views/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Views/InventoryTable.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProdTemp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/InventoryTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Views/InventoryTable.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Views/AddTemplatePartDialog.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddProductTemplateDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Views/AddTemplatePartDialog.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/ProductTemplateTableGateway.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/InventoryTableGateway.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding>
-            <element signature="method#findAllRecords#0;class#InventoryTableGateway#0" expanded="false" />
-            <element signature="method#updateRecord#0;class#InventoryTableGateway#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,123 +1019,252 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Models/DetailModels/InventoryModel.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddProductTemplatePartDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="79" selection-end-column="9" />
+        <state relative-caret-position="481">
+          <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/InventoryList.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Views/TemplatePartTable.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="71" column="76" selection-start-line="71" selection-start-column="76" selection-end-line="71" selection-end-column="76" />
+        <state relative-caret-position="286">
+          <caret line="13" column="85" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Views/TemplatePart.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/InventoryTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddProductTemplateDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-847">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProdTemp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TemplatePartTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Models/DetailModels/TemplatePartModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+        <state relative-caret-position="-612">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProductTemplateListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProdTemplatePartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ItemDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/InventoryDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartListSingleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/CabinetronGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/ProductTemplateTableGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
+          <folding>
+            <element signature="method#insertRecord#0;class#TemplatePartGateway#0" expanded="false" />
+            <element signature="method#deleteRecord#0;class#TemplatePartGateway#0" expanded="false" />
+            <element signature="method#createPreparedStatement#0;class#TemplatePartGateway#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/ListModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Models/DetailModels/InventoryModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/ProductTemplateListModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
+          <folding>
+            <element signature="method#getModelList#0;class#TemplatePartList#0" expanded="false" />
+            <element signature="method#addItemModelToList#0;class#TemplatePartList#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/TableListModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/InventoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddInventoryDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2222">
+          <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/InventoryList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/InventoryTableGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddPartDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1892">
+          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="104" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/PartsFirstRunController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="56" column="100" selection-start-line="56" selection-start-column="100" selection-end-line="56" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/PartsTableCon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/PartsTableGateway.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TableController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TemplatePartTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding>
-            <element signature="method#addItemModelToList#0;class#TemplatePartList#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/TemplatePartListSingleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        <state relative-caret-position="748">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/SQLGateways/TemplatePartGateway.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/PartsList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="54" />
-          <folding>
-            <element signature="method#insertRecord#0;class#TemplatePartGateway#0" expanded="false" />
-            <element signature="method#updateRecord#0;class#TemplatePartGateway#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/PartsFirstRunController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="463">
+          <caret line="114" column="33" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Models/ListModels/ProductTemplateListModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/AddProductTemplatePartDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="80" column="10" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProdTemplatePartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2507#2508#0" expanded="true" />
-            <element signature="e#2549#2550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ProductTemplateListController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1474">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -11,6 +11,7 @@ import sample.SQLGateways.PartsTableGateway;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.NoSuchElementException;
 import java.util.TreeMap;
 
@@ -89,6 +90,16 @@ public class PartsList implements TableListModel{
     }
 
     @Override
+    public int editItemInList(String[] selectedItem, Timestamp lock) throws IllegalArgumentException, SQLException {
+        return 1;
+    }
+
+    @Override
+    public void reloadView() {
+
+    }
+
+    @Override
     public void deleteItemFromList(String[] itemDetails) throws NoSuchElementException, SQLException{
         int deletionIndex = Integer.parseInt(itemDetails[0]);
         String partNum = itemDetails[1];
@@ -101,11 +112,16 @@ public class PartsList implements TableListModel{
         int id;
         if(partModelList.get(deletionIndex) != null) {
             id = observableMap.get(partNum).getID();
-            observableMap.remove(partNum);
             pdg.deleteRecord(id);
+            observableMap.remove(partNum);
         } else{
             throw new NoSuchElementException("Element does not exist");
         }
+    }
+
+    @Override
+    public Timestamp getLock(String id) throws SQLException {
+        return null;
     }
 
 }

@@ -65,7 +65,6 @@ public class ProductTemplateListController extends ItemDetail implements Initial
 
     @Override
     protected void initDialogParameters(String dialogAction) {
-        prodTemplatePartController.print();
         BorderPane childRoot;
         Scene scene;
         try{

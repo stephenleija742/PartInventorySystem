@@ -5,6 +5,7 @@ import com.sun.rowset.CachedRowSetImpl;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.*;
+import java.util.Date;
 
 public class PartsTableGateway implements CabinetronGateway{
     private ComboPooledDataSource ds;
@@ -74,8 +75,8 @@ public class PartsTableGateway implements CabinetronGateway{
     }
 
     @Override
-    public void updateRecord(String[] recordDetail, int indexToUpdate) throws SQLException {
-
+    public int updateRecord(String[] recordDetail, Timestamp indexToUpdate) throws SQLException {
+        return 1;
     }
 
     @Override
@@ -99,6 +100,11 @@ public class PartsTableGateway implements CabinetronGateway{
             preparedStatement.setInt(1, idToDelete);
             preparedStatement.executeUpdate();
         }
+    }
+
+    @Override
+    public Timestamp getDateTime(int id) throws SQLException {
+        return null;
     }
 
     public void findByPartNum(String[] partNum) throws SQLException{

@@ -58,6 +58,9 @@ public class InventoryController extends ItemDetail implements Initializable {
         });
 
         rowSelectionProperty.addListener((observable, oldValue, newValue) -> {
+            if(newValue == null){
+                return;
+            }
             ItemModel selectedPart = observable.getValue();
             id = selectedPart.getID();
             partNum = selectedPart.getPartNum();

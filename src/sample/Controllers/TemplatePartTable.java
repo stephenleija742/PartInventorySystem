@@ -26,7 +26,7 @@ public class TemplatePartTable extends TableController implements Initializable 
 
     }
 
-    int selectedIndex() {return table.getSelectionModel().getSelectedIndex();}
+    //int selectedIndex() {return table.getSelectionModel().getSelectedIndex();}
 
     void setColumnFactories(){
         partCol.setCellValueFactory(new PropertyValueFactory<>("partNum"));

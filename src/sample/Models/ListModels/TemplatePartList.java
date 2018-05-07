@@ -1,17 +1,17 @@
 package sample.Models.ListModels;
 
 import javafx.collections.FXCollections;
-import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import sample.Models.DetailModels.ItemModel;
 import sample.Models.DetailModels.TemplatePartModel;
 import sample.SQLGateways.CabinetronGateway;
-import sample.SQLGateways.InventoryTableGateway;
 import sample.SQLGateways.TemplatePartGateway;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.NoSuchElementException;
@@ -22,21 +22,23 @@ import java.util.NoSuchElementException;
 public class TemplatePartList implements TableListModel {
 
     private ObservableList<ItemModel> templatePartModelList;
-    private ObservableMap<Pair, TemplatePartModel> observableMap;
+    private TemplatePartListSingleton templatePartListSingleton;
     private CabinetronGateway gtwy;
 
     public TemplatePartList(){
         LinkedHashMap<Pair, TemplatePartModel> itemModelMap = new LinkedHashMap<>();
-        observableMap = FXCollections.observableMap(itemModelMap);
-        this.templatePartModelList = FXCollections.observableArrayList(observableMap.values());
+        ObservableMap<Pair, TemplatePartModel> observableMap = FXCollections.observableMap(itemModelMap);
+        //this.templatePartModelList = FXCollections.observableArrayList(observableMap.values());
+        //templatePartListSingleton = TemplatePartListSingleton.getInstance(observableMap.values());
+        templatePartListSingleton = TemplatePartListSingleton.getInstance(observableMap);
         gtwy = TemplatePartGateway.getInstance();
-        observableMap.addListener((MapChangeListener.Change<? extends Pair, ? extends TemplatePartModel> c) ->{
+        /*observableMap.addListener((MapChangeListener.Change<? extends Pair, ? extends TemplatePartModel> c) ->{
             if(c.wasAdded()){
-                templatePartModelList.add(c.getValueAdded());
+                templatePartListSingleton.getTemplatePartList().add(c.getValueAdded());
             } else if (c.wasRemoved()){
-                templatePartModelList.remove(c.getValueRemoved());
+                templatePartListSingleton.getTemplatePartList().remove(c.getValueRemoved());
             }
-        });
+        });*/
     }
 
     @Override
@@ -52,10 +54,11 @@ public class TemplatePartList implements TableListModel {
             templatePartModel.setQuantity(quantity);
             Pair<Integer, String, String> pairKey = new Pair<>(templatePartModel.getID(), templatePartModel.getPartNum(),
                     templatePartModel.getProdNum());
-            observableMap.put(pairKey, templatePartModel);
+            //observableMap.put(pairKey, templatePartModel);
+            templatePartListSingleton.getTemplatePartMap().put(pairKey, templatePartModel);
         }
         rowSet.close();
-        return templatePartModelList;
+        return templatePartListSingleton.getTemplatePartList();
     }
 
     @Override
@@ -63,7 +66,10 @@ public class TemplatePartList implements TableListModel {
         String key = itemDetails[0];
         String value = itemDetails[1];
         Pair<Integer, String, String> pair = new Pair<>(key, value);
-        if(observableMap.containsKey(pair)){
+        /*if(observableMap.containsKey(pair)){
+            throw new IllegalArgumentException("Product is already associated with this Part");
+        }*/
+        if(templatePartListSingleton.getTemplatePartMap().containsKey(pair)){
             throw new IllegalArgumentException("Product is already associated with this Part");
         }
         TemplatePartModel templatePartModel = new TemplatePartModel();
@@ -76,7 +82,17 @@ public class TemplatePartList implements TableListModel {
         templatePartModel.setQuantity(itemDetails[2]);
         templatePartModel.setID(id);
         pair.setId(id);
-        observableMap.put(pair, templatePartModel);
+        templatePartListSingleton.getTemplatePartMap().put(pair, templatePartModel);
+    }
+
+    @Override
+    public int editItemInList(String[] selectedItem, Timestamp lock){
+        return 1;
+    }
+
+    @Override
+    public void reloadView() {
+
     }
 
     @Override
@@ -89,25 +105,24 @@ public class TemplatePartList implements TableListModel {
         Integer id = Integer.parseInt(itemDetails[0]);
         Pair<Integer,String, String> compositeKey = new Pair<>(id, key, val);
         TemplatePartModel currentModel;
-        TemplatePartModel tempModel = observableMap.get(compositeKey);
+        TemplatePartModel tempModel = templatePartListSingleton.getTemplatePartMap().get(compositeKey);
         if(tempModel != null && tempModel.getID() != id){
             // inventory item exists and is not the currently selected item
             throw new IllegalArgumentException("Product Template Part already exists");
         } else{
             // get the current key mapped for this id mapped in list
             Pair<Integer, String, String> currCompositeKey = new Pair<>(id, currKey, currVal);
-            currentModel = observableMap.get(currCompositeKey);
-            System.out.println("error");
+            currentModel = templatePartListSingleton.getTemplatePartMap().get(currCompositeKey);
             if(currentModel != null){
                 // update db and map with new values
                 gtwy.updateRecord(itemDetails);
                 currentModel.setPartNum(key);
                 currentModel.setProdNum(val);
                 currentModel.setQuantity(quantity);
-                observableMap.remove(currCompositeKey);
-                observableMap.put(compositeKey, currentModel);
+                templatePartListSingleton.getTemplatePartMap().remove(currCompositeKey);
+                templatePartListSingleton.getTemplatePartMap().put(compositeKey, currentModel);
                 Comparator<ItemModel> comparator = Comparator.comparing(ItemModel::getPartNum);
-                templatePartModelList.sort(comparator);
+                templatePartListSingleton.getTemplatePartList().sort(comparator);
             } else {
                 // item does not exist at all. this path should not occur
                 throw new IllegalArgumentException("Product Template Part does not exist");
@@ -122,13 +137,14 @@ public class TemplatePartList implements TableListModel {
         if(deletionIndex == -1){
             throw new NoSuchElementException("No element selected for deletion");
         }
-        if(templatePartModelList == null || templatePartModelList.isEmpty()){
+        if(templatePartListSingleton.getTemplatePartList() == null ||
+                templatePartListSingleton.getTemplatePartList().isEmpty()){
             throw new NoSuchElementException("List is empty");
         }
-        ItemModel itemToBeDeleted = observableMap.get(compositeKey);
+        ItemModel itemToBeDeleted = templatePartListSingleton.getTemplatePartMap().get(compositeKey);
         if(itemToBeDeleted != null){
             if(itemToBeDeleted.getQuantity() == 0){
-                observableMap.remove(compositeKey);
+                templatePartListSingleton.getTemplatePartMap().remove(compositeKey);
                 gtwy.deleteRecord(itemToBeDeleted.getID());
             } else {
                 throw new IllegalArgumentException("Quantity must be greater than 0 to delete item");
@@ -136,5 +152,10 @@ public class TemplatePartList implements TableListModel {
         } else{
             throw new IllegalArgumentException("Product Template does not exist");
         }
+    }
+
+    @Override
+    public Timestamp getLock(String id) throws SQLException {
+        return null;
     }
 }

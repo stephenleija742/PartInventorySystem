@@ -1,15 +1,19 @@
 package sample.Controllers;
 
 
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import org.jetbrains.annotations.Contract;
+import sample.Models.ListModels.InventoryList;
 import sample.Models.ListModels.TableListModel;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ConcurrentModificationException;
 import java.util.ResourceBundle;
 
 /**
@@ -25,6 +29,8 @@ public class AddInventoryDialog implements Initializable, ItemDialogInterface {
     private TableListModel inventoryList;
     private String previousPartNumber;
     private String previousLocation;
+    private Timestamp lock = null;
+    private int successfulUpdate;
 
     public int id;
 
@@ -67,8 +73,18 @@ public class AddInventoryDialog implements Initializable, ItemDialogInterface {
 
     @Override
     public void initDataAndListeners(TableListModel inventoryListReference, Boolean isEditable){
+        successfulUpdate = 0;
         partNumberField.setEditable(isEditable);
         inventoryList = inventoryListReference;
+        try{
+             lock = inventoryList.getLock(getID());
+        } catch (SQLException sqlEx){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Invalid Item");
+            alert.setHeaderText("Inventory Constraint");
+            alert.setContentText(sqlEx.getMessage());
+            alert.show();
+        }
         saveButton.setOnAction(event -> {
             try {
                 if (headerLabel.getText().equals("Add Inventory")) {
@@ -77,12 +93,18 @@ public class AddInventoryDialog implements Initializable, ItemDialogInterface {
                 } else {
                     String[] inventoryDetails = {getID(), getPartNumber(), getLocation(),getQuantity(),
                                                 previousPartNumber, previousLocation};
-                    inventoryList.editItemInList(inventoryDetails);
+                    inventoryList.editItemInList(inventoryDetails, lock);
                     //inventoryList
                     //partsList.editInventoryList(partDetails, 1);
                 }
                 saveButton.getScene().getWindow().hide();
-            }  catch(IllegalArgumentException | SQLException e){
+            }  catch(IllegalArgumentException | SQLException | ConcurrentModificationException e){
+                //inventoryList = inventoryListReference;
+                try {
+                    inventoryList.reloadView();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Invalid Item");
                 alert.setHeaderText("Inventory Constraint");

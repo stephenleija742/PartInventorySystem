@@ -8,9 +8,11 @@ import sample.Models.DetailModels.ProductTemplateModel;
 import sample.SQLGateways.CabinetronGateway;
 import sample.Models.DetailModels.ItemModel;
 import sample.SQLGateways.ProductTemplateTableGateway;
+import sample.SQLGateways.TemplatePartGateway;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.NoSuchElementException;
 import java.util.TreeMap;
 
@@ -21,6 +23,7 @@ public class ProductTemplateListModel implements TableListModel {
 
     private ObservableList prodModelList;
     private ObservableMap<String, ProductTemplateModel> observableMap;
+    private TemplatePartListSingleton templatePartListSingleton;
     private CabinetronGateway gtwy;
 
     public ProductTemplateListModel(){
@@ -77,22 +80,62 @@ public class ProductTemplateListModel implements TableListModel {
     }
 
     @Override
+    public int editItemInList(String[] selectedItem, Timestamp lock) throws IllegalArgumentException, SQLException {
+        return 1;
+    }
+
+    @Override
+    public void reloadView() {
+
+    }
+
+    @Override
     public void deleteItemFromList(String[] itemDetails) throws NoSuchElementException, SQLException {
+        int id;
+        templatePartListSingleton = TemplatePartListSingleton.getInstance(null);
+        TemplatePartGateway templatePartGateway = TemplatePartGateway.getInstance();
         int deletionIndex = Integer.parseInt(itemDetails[0]);
-        String partNum = itemDetails[1];
+        Pair compositeKey;
+        String prodNum = itemDetails[1];
         if(deletionIndex == -1){
             throw new NoSuchElementException("No element selected for deletion");
         }
         if(prodModelList == null || prodModelList.isEmpty()){
             throw new NoSuchElementException("List is empty");
         }
-        int id;
+
+        //templatePart.next();
+        if(templatePartListSingleton.getTemplatePartList() == null ||
+                templatePartListSingleton.getTemplatePartList().isEmpty()){
+            throw new NoSuchElementException("List is empty");
+        }
+        CachedRowSet templatePart = templatePartGateway.findRecordOnProductNum(itemDetails[1]);
+        while (templatePart.next()) {
+            compositeKey = new Pair(templatePart.getString("Part"), templatePart.getString("Template"));
+            ItemModel itemToBeDeleted = templatePartListSingleton.getTemplatePartMap().get(compositeKey);
+            if (itemToBeDeleted != null) {
+                if (itemToBeDeleted.getQuantity() == 0) {
+                    templatePartListSingleton.getTemplatePartMap().remove(compositeKey);
+                    templatePartGateway.deleteRecord(itemToBeDeleted.getID());
+                } else {
+                    throw new IllegalArgumentException("Quantity must be greater than 0 to delete item");
+                }
+            } else {
+                throw new IllegalArgumentException("Product Template does not exist");
+            }
+        }
+
         if(prodModelList.get(deletionIndex) != null) {
-            id = observableMap.get(partNum).getID();
-            observableMap.remove(partNum);
+            id = observableMap.get(prodNum).getID();
+            observableMap.remove(prodNum);
             gtwy.deleteRecord(id);
         } else{
             throw new NoSuchElementException("Element does not exist");
         }
+    }
+
+    @Override
+    public Timestamp getLock(String id) throws SQLException {
+        return null;
     }
 }

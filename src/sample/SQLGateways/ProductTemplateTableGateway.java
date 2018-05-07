@@ -5,6 +5,7 @@ import com.sun.rowset.CachedRowSetImpl;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.*;
+import java.util.Date;
 
 /**
  * Created by Stephen on 1/21/2018.
@@ -69,8 +70,8 @@ public class ProductTemplateTableGateway implements CabinetronGateway{
     }
 
     @Override
-    public void updateRecord(String[] recordDetail, int indexToUpdate) throws SQLException {
-
+    public int updateRecord(String[] recordDetail, Timestamp indexToUpdate) throws SQLException {
+        return 1;
     }
 
     @Override
@@ -92,6 +93,11 @@ public class ProductTemplateTableGateway implements CabinetronGateway{
             preparedStatement.setInt(1, idToDelete);
             preparedStatement.executeUpdate();
         }
+    }
+
+    @Override
+    public Timestamp getDateTime(int id) throws SQLException {
+        return null;
     }
 
     @Override

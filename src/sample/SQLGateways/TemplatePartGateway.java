@@ -5,6 +5,7 @@ import com.sun.rowset.CachedRowSetImpl;
 
 import javax.sql.rowset.CachedRowSet;
 import java.sql.*;
+import java.util.Date;
 
 /**
  * Created by Stephen on 2/8/2018.
@@ -19,11 +20,12 @@ public class TemplatePartGateway implements CabinetronGateway {
             "INSERT INTO templatepart (Part, Template, Quantity) " +
             "SELECT p.partnum, pt.productnum, ? FROM producttemplate pt " +
             "CROSS JOIN part p WHERE p.partnum = ? AND pt.productnum = ?";
-    // SELECT FROM other table where partnum = ? and producttemplate = ?
     private static final String tableEditStr = "UPDATE templatepart " +
             "SET Part = ?, Template = ?, Quantity = ?" +
             " WHERE TemplatePartID = ?";
-    private static final String delTemplateStr = "DELETE FROM producttemplate WHERE ProductTemplateID = ?";
+    private static final String delTemplateStr = "DELETE FROM templatepart WHERE templatepartid = ?";
+    private static final String findOnProdNumStr = "SELECT Part, Template FROM templatepart WHERE Template = ?";
+    //private static final String findOnProdNumStr = "SELECT * FROM templatepart WHERE Template = ?";
 
     public static TemplatePartGateway getInstance(){
         if(uniqueInstance == null){
@@ -72,8 +74,8 @@ public class TemplatePartGateway implements CabinetronGateway {
     }
 
     @Override
-    public void updateRecord(String[] recordDetail, int indexToUpdate) throws SQLException {
-
+    public int updateRecord(String[] recordDetail, Timestamp indexToUpdate) throws SQLException {
+        return 1;
     }
 
     @Override
@@ -99,6 +101,11 @@ public class TemplatePartGateway implements CabinetronGateway {
     }
 
     @Override
+    public Timestamp getDateTime(int id) throws SQLException {
+        return null;
+    }
+
+    @Override
     public PreparedStatement createPreparedStatement(Connection conn, String[] recordDetails) throws SQLException {
         PreparedStatement preparedStatement = conn.prepareStatement(templateInsertStr,
                 Statement.RETURN_GENERATED_KEYS);
@@ -113,5 +120,21 @@ public class TemplatePartGateway implements CabinetronGateway {
         preparedStatement.setString(6, recordDetails[1]); //productnum*/
         preparedStatement.executeUpdate();
         return preparedStatement;
+    }
+
+    public CachedRowSet findRecordOnProductNum(String prodNum) throws SQLException{
+        CachedRowSet rowSet = new CachedRowSetImpl();
+        ResultSet rs;
+        try (Connection conn = pds.getConnection();
+             PreparedStatement statement = conn.prepareStatement(findOnProdNumStr)){
+             statement.setString(1, prodNum);
+             rs = statement.executeQuery();
+            //rs.next();
+            //System.out.println("PartNum: " + rs.getString(1) + ", ProdNum: " + rs.getString((2)));
+             rowSet.populate(rs);
+
+        }
+        return rowSet;
+
     }
 }

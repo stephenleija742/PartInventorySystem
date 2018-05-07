@@ -45,7 +45,11 @@ import java.util.logging.Logger;
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Deletion Error");
             alert.setHeaderText("Error deleting record");
-            alert.setContentText(e.getMessage());
+            if(e.getMessage().contains("Cannot delete or update a parent row: a foreign key constraint fails")){
+               alert.setContentText("Can't delete part because it is being referenced in a Part Template");
+            } else {
+                alert.setContentText(e.getMessage());
+            }
             alert.show();
             Logger logger = Logger.getLogger(ItemModel.class.getName());
             logger.log(Level.WARNING, e.toString(), e.getMessage());
