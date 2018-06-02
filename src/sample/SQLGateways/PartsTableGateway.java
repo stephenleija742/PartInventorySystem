@@ -30,7 +30,7 @@ public class PartsTableGateway implements CabinetronGateway{
 
     private PartsTableGateway() {
         ds = new ComboPooledDataSource();
-        ds.setJdbcUrl("jdbc:mysql://localhost:8081/mydatabase");
+        ds.setJdbcUrl("jdbc:mysql://localhost:8081/mydatabase?verifyServerCertificate=false&useSSL=true");
         ds.setUser("root");
         ds.setPassword("root");
     }

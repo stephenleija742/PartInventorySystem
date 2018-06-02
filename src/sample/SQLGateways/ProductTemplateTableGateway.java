@@ -33,7 +33,7 @@ public class ProductTemplateTableGateway implements CabinetronGateway{
 
     private ProductTemplateTableGateway(){
         pds = new ComboPooledDataSource();
-        pds.setJdbcUrl("jdbc:mysql://localhost:8081/mydatabase");
+        pds.setJdbcUrl("jdbc:mysql://localhost:8081/mydatabase?verifyServerCertificate=false&useSSL=true");
         pds.setUser("root");
         pds.setPassword("root");
     }

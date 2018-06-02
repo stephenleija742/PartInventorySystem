@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import sample.Models.DetailModels.ItemModel;
 import sample.Models.ListModels.PartsList;
 import sample.Models.ListModels.TableListModel;
+import sample.Models.UserModels.AdminSession;
+import sample.Models.UserModels.Session;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,16 +33,20 @@ public class PartsFirstRunController extends ItemDetail implements Initializable
     @FXML private Button deleteButton;
     @FXML private Button editButton;
     @FXML private GridPane grid;
+    private Session session;
     private Stage parentStage;
     private TableListModel partsList;
 
     private String partNum, partName, vendor, dropDownSelection, externalPartNum;
     private int partID;
 
-    public PartsFirstRunController(){
+    public PartsFirstRunController(Session session){
+        this.session = session;
     }
 
     public void initialize(URL location, ResourceBundle resources) {
+        //session = AdminSession.getInstance();
+//        System.out.println("Role: " + session.getRole());
         partsList = new PartsList();
         //partsTableConController = new PartsTableCon();
         partsTableConController.setColumnsFactories();
@@ -104,7 +110,9 @@ public class PartsFirstRunController extends ItemDetail implements Initializable
         }
     }
 
-    public void setStage(Stage parentStageReference){
+    void setStage(Stage parentStageReference){
+        System.out.println("Role: " + session.getRole());
+       // this.session = session;
         parentStage = parentStageReference;
     }
 }

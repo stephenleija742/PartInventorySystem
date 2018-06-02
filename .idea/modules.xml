@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CabinetronFX.iml" filepath="$PROJECT_DIR$/CabinetronFX.iml" />
-      <module fileurl="file://$USER_HOME$/Downloads/jfreechart-1.0.19/jfreechart-1.0.19/jfreechart-1.0.19.iml" filepath="$USER_HOME$/Downloads/jfreechart-1.0.19/jfreechart-1.0.19/jfreechart-1.0.19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PartInventorySystem.iml" filepath="$PROJECT_DIR$/PartInventorySystem.iml" />
     </modules>
   </component>
 </project>

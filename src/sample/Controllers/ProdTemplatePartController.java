@@ -61,10 +61,6 @@ public class ProdTemplatePartController extends ItemDetail implements Initializa
         });
     }
 
-    protected void print(){
-        System.out.println("test");
-    }
-
     @Override
     protected void initDialogParameters(String dialogAction) {
         BorderPane childRoot;
